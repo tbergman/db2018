@@ -1,0 +1,94 @@
+{ 
+  "songs": [
+     {
+       "artist": "Migos ft. Lil Uzi Vert",
+       "title": "Bad and Boujee",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_scale,w_684/v1513233061/dbrad2017/medium/best_songs_2017_migos.png",
+       "songURL": "https://www.youtube.com/watch?v=Cufz92eiUPQ",
+       "description": "Migos, the Atlanta rap trio that dominated 2017, struck gold with their #1 hit single, 'Bad and Boujee.' It certainly didn't hurt when Donald Glover <a target='_blank' href='https://www.youtube.com/watch?v=Z4bprZkOqiU'>publicly thanked Migos at the Golden Globes</a> for making 'Bad and Boujee,' calling it the 'best song ever' and helping it reach the top of the charts. The song is both woozy and fun, with its groggy production and Migos' singular triplet-heavy flow. No line in hip-hop was more distinctive in 2017 than 'Raindrop! Drop top!'",
+       "_id": 20,
+       "photoCredit": "GL Askew/Marko The Curator/David Browne/The Fader"
+     },
+     {
+       "artist": "SZA ft. Travis Scott",
+       "title": "Love Galore",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,h_684,w_684/v1513233569/dbrad2017/medium/best_songs_2017_sza.png",
+       "songURL": "https://www.youtube.com/watch?v=Ar6u90btpJQ",
+       "description": "You all need to be listening to SZA. Of the many artists out there doing what is often called 'alternative R&B,' SZA's new album <i>Ctrl</i> stands out with its expert songwriting and her distinct personality. The production on 'Love Galore' feels like sweet molasses, slow moving and aurally pleasing. SZA's vocal performance is top-notch, and Travis Scott adds the occasional joyful 'YAH!' and a smooth verse.",
+       "_id": 19,
+       "photoCredit": "Johan Sandberg/InStyle"
+     },
+     {
+       "artist": "Cloud Nothings",
+       "title": "Enter Entirely",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_scale,w_684/v1513326991/dbrad2017/small/best_songs_2017_cloud_nothings.jpg",
+       "songURL": "https://www.youtube.com/watch?v=QXPXBaDuHoA",
+       "description": "Cloud Nothings started out as an indie pop band before turning it up to eleven on one of the best albums of the decade, 2012's hard-rocking and intense <i>Attack on Memory</i>. Frontman Dylan Baldi goes back to draw from his pop roots on <i>Life Without Sound</i>, the band's fifth full-length, but maintains the edge he's gained in the years since. 'Enter Entirely' kind of sounds like 90's Weezer, but darker and a little more introspective. My absolute favorite part starts at 2:58 and goes all the way through to the end - I'm honestly obsessed with it. After riding a great groove, Baldi leaves just an understated guitar and a few snare hits, while singing 'Moving on, but I still feel it / You're just a light in me now.' He repeats the lyric multiple times as he brings the full band back in, building to an incredible climax.",
+       "_id": 18,
+       "photoCredit": "Cloud Nothings"
+     },
+     {
+       "artist": "Frank Ocean",
+       "title": "Chanel",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,h_684,w_684/v1513233043/dbrad2017/medium/best_songs_2017_frank_ocean.png",
+       "songURL": "https://www.youtube.com/watch?v=XnbsIl2BnWw",
+       "description": "After many years of fans desperately waiting for the follow-up to 2012's classic <i>channel ORANGE</i>, Frank Ocean finally released <i>two</i> albums last year, <i>Blonde</i> and <i>Endless</i>. With his rabid fanbase placated, he then proceeded to drop a string of low-key one-off singles this year that barely made a wave, but were nonetheless incredible. The best of the bunch is 'Chanel,' an absolutely gorgeous, subtle treasure. The song's chorus is 'I see both sides like Chanel,' a play on the Chanel logo with its interlocking backward and forward C. The track simmers with its light piano, trippy drums, and semi-psychedelic effects. The part that always gets stuck in my head is when Frank sings 'My pocket's snug, they can't hold my [iPhone] 7 / They banned my Visa, my Amex and Mastercards,' easily making this the loveliest song to name-check credit card companies.",
+       "_id": 17,
+       "photoCredit": "Frank Ocean"
+     },
+     {
+       "artist": "White Reaper",
+       "title": "Judy French",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,h_684,w_684/v1513194759/dbrad2017/medium/best_songs_2017_white_reaper.png",
+       "songURL": "https://www.youtube.com/watch?v=cloP2ZIkxuo",
+       "description": "I've raved about White Reaper before, calling their style of music 'snot-nosed garage punk.' In 2017, White Reaper polished and amplified their sound, taking it from scuzzy clubs to arenas. 'Judy French' is a joy to behold, full of giant guitar riffs and frontman Tony Esposito's distinctive yowl. It combines different styles from the annals of rock n' roll history - namely of the 'hard,' 'pop,' and 'arena' varieties - to create a treasure of a song that I would have loved to drive around to in high school.",
+       "_id": 16,
+       "photoCredit": "White Reaper"
+     },
+     {
+       "artist": "Julie Byrne",
+       "title": "Natural Blue",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_scale,w_684/v1513194659/dbrad2017/medium/best_songs_2017_julie_byrne.png",
+       "songURL": "https://www.youtube.com/watch?v=0gdO3qebP5E",
+       "description": "Sometimes we get overrun with indie acoustic folk music that sounds pleasant enough, but ends up being ultimately forgettable. Julie Byrne, from Buffalo, New York, breaks the mold with songs that are crystal clear and deeply affecting. 'Natural Blue' is so peaceful and serene, with just the right amount of atmospheric touches and strings complementing Byrne's delicately picked guitar and beautiful, understated voice, singing 'And when I first saw you, the sky, it was such a natural blue.'",
+       "_id": 15,
+       "photoCredit": "Jonathan Bouknight/Julie Byrne"
+     },
+     {
+       "artist": "Jay Som",
+       "title": "The Bus Song",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_face:center,h_684,w_684/v1513194557/dbrad2017/medium/best_songs_2017_jay_som.png",
+       "songURL": "https://www.youtube.com/watch?v=k2SluHV2i40",
+       "description": "Melina Duterte, the Oakland-based 22-year-old who goes by Jay Som, is a gem. Her talent shines through on 'The Bus Song,' where she writes, plays, and produces every sound you hear. It's a self-assured, nuanced, excellent song, intimate in both its sound and sentiment. I love when musicians adeptly bring different instruments in and out of a song, and Duterte is a master. She relies on a base level of drums, bass, guitar, and her soft, compelling voice, but occasionally brings in a piano, trumpet, and flute when it counts. My favorite moment is when she strips all the beautiful layers away for just a second at 2:33 - the drums and other instruments drop out at just the right moment, when Duterte sings 'And I just want you to neeeeed me.'",
+       "_id": 14,
+       "photoCredit": "Cara Robbins"
+     },
+     {
+       "artist": "The xx",
+       "title": "Dangerous",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_faces:center,h_684,w_684/v1513194507/dbrad2017/medium/best_songs_2017_the_xx.png",
+       "songURL": "https://www.youtube.com/watch?v=PZCCey_22ws",
+       "description": "The xx expanded their sound in 2017, bolstering their more minimal style and coming closer to the larger feel of Jamie xx's solo material. 'Dangerous' has an irresistible club feel, built around a seductive bass line, pulsing drums, and a blaring synth-trumpet riff. The way Jamie xx deploys different sounds is marvelous, especially at 2:49, when everything drops out except the bass and drum machine, and the trumpets slowly fade in, crescendoing to a great climax. 'Dangerous' is easily the best dance song of the year, perfect for a late night and a good time.",
+       "_id": 13,
+       "photoCredit": "Laura Coulson"
+     },
+     {
+       "artist": "Lorde",
+       "title": "Green Light",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,h_684,w_684/v1513233229/dbrad2017/medium/best_songs_2017_lorde_2.png",
+       "songURL": "https://www.youtube.com/watch?v=dMK_npDG12Q",
+       "description": "<p>A while ago, a friend of mine asked me who makes more 'anthemic' songs - Taylor Swift or Lorde? This was before Lorde's exquisite <i>Melodrama</i> came out this year, but after the lead single, 'Green Light,' was released. Her celebrated debut album from 2013, <i>Pure Heroine</i>, was exceptional, full of quietly encouraging, relatable songs, but I wouldn't necessarily characterize it as anthemic. Swift may not be everyone's cup of tea, but singles like '22,' 'I Knew You Were Trouble,' and 'Bad Blood' are as conducive to late-night, impromptu sing-alongs as anything. So, after judging their musical output as a whole, my answer was Taylor Swift. BUT, I clarified that on a song-by-song basis, the most anthemic track either of them had ever done is easily Lorde's 'Green Light.'</p><p>I was immediately taken aback by 'Green Light.' It is <i>very</i> poppy in a reach-for-the-stars kind of way, which is not what I expected from Lorde and her more brooding, subtle style. But the more I heard it, the more the various parts stuck with me, like that enticing rhythmic piano in the lead-up to the chorus, or Lorde's pitch-perfect lyrics, like her sneer directed at an ex -- 'She says you love the beach, you're such a damn liar.'</p><p>Previously, Lorde had deftly straddled the line between electro-indie and pop in a way that was unique at the time. So to hear 'Green Light,' which is very much a full-fledged pop song, was a bit jarring at first. But the thing is, 'Green Light' is meant to aim big, and it succeeds tremendously. Taylor Swift has written timeless anthems, but if I were to drive around with the windows down late at night with friends, the first song I would want to hear is 'Green Light.'</p>",
+       "_id": 12,
+       "photoCredit": "Alessio Boni"
+     },
+     {
+       "artist": "Fleet Foxes",
+       "title": "Third of May / Odaigahara",
+       "imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_faces:center,h_684,w_684/v1513195794/dbrad2017/medium/best_songs_2017_fleet_foxes.png",
+       "songURL": "https://www.youtube.com/watch?v=6GqgNebPm50",
+       "description": "After long last, including a stint at Columbia University, Robin Pecknold and the rest of the Fleet Foxes released their third album <i>Crack-Up</i> in 2017. It continues their career trajectory beginning with the simple structures of their debut self-titled album in 2008 (<i>Fleet Foxes</i>, featuring the well-known <a target='_blank' href='https://www.youtube.com/watch?v=DrQRS40OKNE'>'White Winter Hymnal'</a>) and giving way to the more complex, but still thoroughly melodic <i>Helplessness Blues</i> in 2011. 'Third of May/Odaigahara' furthers the mission of <i>Helplessness Blues</i>, rich with an intricate soundscape and meandering melody. It brims with sweeping strings, quick changes from loud to soft (and back again), and a bit of grandeur, as Pecknold sings about <a target='_blank' href='https://genius.com/Fleet-foxes-third-of-may-odaigahara-lyrics'>'an unresolved, unrequited relationship'</a> with his bandmate during their time apart. My favorite line appears midway through, during an intense moment with a swirling current of strings, as Pecknold sings, 'Can I be light and free? If I lead you through the fury, will you call to me?' 'Third of May/Odaigahara' is confident, unbelievable gorgeous, and full of surprises at every turn.",
+       "_id": 11,
+       "photoCredit": "Kyle Johnson/New York Times"
+     }
+  ]
+}

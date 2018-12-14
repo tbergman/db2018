@@ -23,5 +23,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-burger-menu": "^2.5.4",
+    "react-html-parser": "^2.0.2",
+    "react-lazyload": "^2.3.0",
+    "react-modal": "^3.7.1",
+    "react-player": "^1.7.1",
+    "react-reveal": "^1.2.2"
+  }
 }
