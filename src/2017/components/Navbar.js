@@ -18,28 +18,28 @@ function Navbar(props) {
             activeClassName='Navbar-link--active'
             className='Navbar-link'
             exact
-            to='/'
+            to='/2017'
           >
             Intro
           </NavLink>
           <NavLink
             activeClassName='Navbar-link--active'
             className='Navbar-link'
-            to='/50-21'
+            to='/2017/50-21'
           >
             50-21 
           </NavLink>
           <NavLink
             activeClassName='Navbar-link--active'
             className='Navbar-link'
-            to='/20-11'
+            to='/2017/20-11'
           >
             20-11 
           </NavLink>
           <NavLink
             activeClassName='Navbar-link--active'
             className='Navbar-link'
-            to='/10-1'
+            to='/2017/10-1'
           >
             10-1 
           </NavLink>

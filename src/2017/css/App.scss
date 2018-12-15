@@ -72,6 +72,12 @@ body {
   font-size: 1.2rem;
   line-height: 0.5rem;
   margin: 7rem 0 7rem 7rem;
+  .Section-links-h2 {
+    margin-bottom: 0.5em;
+  }
+  a.section-link {
+    line-height: 20px;
+  }
 }
 
 .Section-two {
@@ -636,7 +642,7 @@ a.footer-link:hover {
     margin-left: 0;
   }
   .Section-links {
-    margin: 3rem 0 3rem 3rem;
+    margin: 3rem 0 3em 3em;
     h2 {
       font-size: 1.5rem;
     }

@@ -18,10 +18,10 @@ export default class Routes extends Component {
 		    		<Navbar />
 		    		<BurgerNavbar />
 		    		<Switch>
-		    			<Route exact path="/" component={Home} />
-			    		<Route path="/50-21" component={SmallBox} />
-			    		<Route path="/20-11" component={MediumBox} />
-			    		<Route path="/10-1" component={LargeBox} />
+		    			<Route exact path="/2017" component={Home} />
+			    		<Route path="/2017/50-21" component={SmallBox} />
+			    		<Route path="/2017/20-11" component={MediumBox} />
+			    		<Route path="/2017/10-1" component={LargeBox} />
 			    	</Switch>
 			    	<Footer />
 		    	</div>

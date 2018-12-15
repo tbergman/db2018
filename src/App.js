@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home.js';
 import Seventeen from './2017/AppRoutes.js';
 import Eighteen from './2018/components/Eighteen.js';
-import logo from './logo.svg';
 import './App.scss';
 
 class App extends Component {
