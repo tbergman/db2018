@@ -10,10 +10,14 @@ body {
   background-color: $black;
 }
 
-.App {
+.App-2017 {
   color: $white;
+  background-color: $black;
   font-family: $font-family-sans-serif;
   font-weight: 300;
+  p {
+    color: $white;
+  }
 }
 
 /* ==== */
@@ -601,8 +605,9 @@ a:visited, .page-links:visited {
 }
 
 .bottom-span {
-  margin-bottom: 2rem; 
+  padding-bottom: 2rem; 
   text-align: center;
+  background-color: #000000;
 }
 
 .footer-link-div {

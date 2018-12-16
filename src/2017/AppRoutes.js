@@ -14,7 +14,7 @@ export default class Routes extends Component {
 		return(
 			<BrowserRouter>
 		    <div>
-		    	<div className="App">
+		    	<div className="App-2017">
 		    		<Navbar />
 		    		<BurgerNavbar />
 		    		<Switch>
