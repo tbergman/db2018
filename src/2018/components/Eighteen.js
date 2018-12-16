@@ -14,15 +14,20 @@ class Eighteen extends Component {
 	}
 
 	render() {
+		const data = this.state.songData.songDataJSON.songs;
+		console.log(data);
+
 		return (
 			<div className="App-2018">
 				<Nav />
 				<Hero />
 				{/*Video Player*/}
 				{/*map over data and pass to song card as props*/}
-				this.state.songData.map(song => {
-					<SongCard props={song} />
-				})
+				{data.map((song) => {
+					return (
+						<SongCard props={song} key={song.id} />
+					)
+				})}
 				<Footer />
 			</div>
 		)
