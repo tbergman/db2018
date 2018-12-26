@@ -98,7 +98,7 @@ class Eighteen extends Component {
 			inViewport: false,
 			width: 0,
 			height: 0,
-			genres: ["rock", "R&B", "pop", "indie", "rap"],
+			genres: ["ROCK", "R&B", "POP", "INDIE", "RAP"],
 			selectedGenres: []
 		}
 		// this.exampleRef = React.createRef()
@@ -154,7 +154,7 @@ class Eighteen extends Component {
 		// console.log(muted, "muted-eighteen")
 		return (
 			<div className="App-2018">
-				<Nav />
+				<Nav genres={this.state.genres} />
 				<Hero soundSelection={this.soundSelection}  />
 				
 				<section className={soundStatus}>
