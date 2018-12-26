@@ -1,8 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactPlayer from 'react-player'
 
 function Player(props) {
-  return <ReactPlayer url={props.playerUrl} ref={props.refField} config={props.config} />
+	//console.log(props.height, "props.height")
+  return (
+  	<ReactPlayer 
+	  	url={props.url} 
+	  	config={props.config} 
+	  	width={props.width} 
+	  	height={props.height}
+	  	playing={props.playing} 
+	  	volume={props.volume}
+	  	muted={props.muted}
+	  	 />
+	 )
 }
 
 export default Player;

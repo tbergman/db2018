@@ -1,0 +1,15 @@
+.Nav-18 {
+	display: flex;
+	height: 45px;
+	background-color: #000;
+	.Logo-18 {
+		width: 42px;
+		height: 42px;
+		img {
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		//background-repeat: no-repeat;
+		//background-size: cover;
+	}
+}

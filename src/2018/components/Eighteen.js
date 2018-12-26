@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Hero from './Hero';
-import SongCardBlock from './SongCard';
+import SongCard from './SongCard';
 import Footer from './Footer';
+import handleViewport from 'react-in-viewport';
 
 
-import songDataJSON from '../data/songData.json';
-
-import ReactPlayer from 'react-player'
-//import Player from './Player';
-import videoSrc from '../media/50-37.mp4';
+//import songDataJSON from '../data/songData.json';
 //const videoUrl = 'https://www.youtube.com/embed/pa_4jV0qRTg'//watch?v=pYRgeHRtKvU&feature=youtu.be
-const videoUrl = 'https://soundcloud.com/iceage-official/hurrah'
+// const videoUrl = 'https://soundcloud.com/iceage-official/hurrah'
 const songData2018 = [
 	{
 		"artist": "Dirty Projectors",
@@ -20,6 +17,10 @@ const songData2018 = [
 		"startTime": 322,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=bKJBSjadBRw",
+		"youtube": true,
+		"start": 32,
+		"end": 71,
 	},
 	{
 		"artist": "Janelle Monáe",
@@ -28,6 +29,10 @@ const songData2018 = [
 		"startTime": 362,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=mTjQq5rMlEY",
+		"youtube": true,
+		"start": 76,
+		"end": 119,
 	},
 	{
 		"artist": "Tomberlin",
@@ -36,6 +41,10 @@ const songData2018 = [
 		"_id": 40,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=vquVuj0DWZk",
+		"youtube": true,
+		"start": 93,
+		"end": 131,
 	},
 	{
 		"artist": "Cardi B ft. Bad Bunny & J Balvin",
@@ -44,6 +53,10 @@ const songData2018 = [
 		"startTime": 442,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=xTlNMmZKwpA",
+		"youtube": true,
+		"start": 56,
+		"end": 85, //94
 	},
 	{
 		"artist": "No Age",
@@ -52,6 +65,10 @@ const songData2018 = [
 		"startTime": 485,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=B7WiAVLqJOc",
+		"youtube": true,
+		"start": 151,
+		"end": 194,
 	},
 	{
 		"artist": "Snail Mail",
@@ -60,6 +77,10 @@ const songData2018 = [
 		"startTime": 529,
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
+		"videoUrl": "https://www.youtube.com/watch?v=s7tnTucP1UM",
+		"youtube": true,
+		"start": 60,
+		"end": 96,
 	},
 ]
 
@@ -73,112 +94,94 @@ class Eighteen extends Component {
 			soundOn: null, 
 			songId: '', //songUrl?
 			playing: false,
-			startTime: 0
+			startTime: 0,
+			inViewport: false,
+			width: 0,
+			height: 0,
+			genres: ["rock", "R&B", "pop", "indie", "rap"],
+			selectedGenres: []
 		}
-		this.handleScroll = this.handleScroll.bind(this);
-		this.exampleRef = React.createRef()
-
-		//this.soundSelection = this.soundSelection.bind(this);
-		//this.getSongId = this.getSongId.bind(this);
+		// this.exampleRef = React.createRef()
+		// this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 	}
-	// set / update user sound preferences
+
+	componentDidMount() {
+		// const songCardLine = document.getElementsByClassName('In-viewport');
+		//console.log(songCardLine, 'song card line')	
+		// update window dimensions when screen resized
+		this.updateWindowDimensions();
+	  window.addEventListener('resize', this.updateWindowDimensions);  
+	};
+
+	componentWillUnmount() {
+	  window.removeEventListener('resize', this.updateWindowDimensions);
+	}
+
+	updateWindowDimensions = () => {
+	  this.setState({ width: window.innerWidth, height: window.innerHeight });
+	}
+	// set & update user sound preferences
 	soundSelection = (val) => {
-		console.log(`sound ${val}`);
+		//console.log(`sound ${val}`);
+		// const passwordInput = document.getElementsByTagName('input');
+		this.handlePlaying();
 		this.setState({
 			soundOn: val
 		})
 	}
 
-	// onScrollGetCurrentSong = (id) => {
-	// }
-
-	// onScroll = (id) => {
-	// 	console.log('scrolled')
-	// 	var foundData = this.state.songData.SongDataJSON.find(song => song.id === id)
-	// 	console.log(foundData)
-	// 	//setStartTime()
-	// }
-
-	componentDidMount() {
-		const songCardDiv = document.getElementsByClassName('song-card');
-		console.log(songCardDiv, 'song card div')
-	  // window.addEventListener('scroll', this.handleScroll);
-	};
-
-	componentWillUnmount() {
-	  // window.removeEventListener('scroll', this.handleScroll);
-	};
-
-	handleScroll(id) {
-		const currentDiv = document.getElementById(id)
-		if (currentDiv.scrollIntoView() === true) {
-			console.log('hello?', id)
-		}
-	  // console.log('div id scroll', id)
-	};
-
 	// isInViewport(offset = 0) {
 	// 	console.log('isInViewport')
-	//    if (!this.yourElement) return false;
-	//    const top = this.yourElement.getBoundingClientRect().top;
-	//    return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
 	//  }
+
+	handlePlaying = () => {
+		// if (this.state.soundOn) {
+			this.setState({
+				playing: true
+			})
+		// }
+	}
 
 	render() {
 		const data = this.state.songData.songData2018;
-		console.log(data);
-
+		const soundStatus = (this.state.soundOn === null) ? "hidden" : "";
+		// console.log('state.soundOn', this.state.soundOn);
+		// console.log('soundStatus', soundStatus)
+		//console.log('width and height', this.state.width, this.state.height)
+		const width = this.state.width;
+		//const height = this.state.height;
+		const muted = this.state.soundOn
+		// console.log(muted, "muted-eighteen")
 		return (
 			<div className="App-2018">
 				<Nav />
 				<Hero soundSelection={this.soundSelection}  />
-				{/*Video Player*/}
-				{/*map over data and pass to song card as props*/}
-				<ReactPlayer 
-					url={videoUrl}
-					config={{
-				    youtube: {
-				      playerVars: { start: 322, end: 330 }
-				    },
-				    soundCloud: {
-				    	options: { auto_play: true }
-				    }
-			    }} />
+				
+				<section className={soundStatus}>
 				{data.map((song) => {
 					return (
-						<SongCardBlock className="song-card" props={song} id={song._id} key={song._id}  />
+						<SongCardBlock 
+							className="song-card" 
+							props={song} 
+							width={width}
+							id={song._id} 
+							key={song._id} 
+							playing={this.state.playing} 
+							muted={muted} /> //onmouseleave
 					)
 				})}
-				<Footer />
+				</section>
+				<Footer visibility={soundStatus} />
 			</div>
 		)
 	}
 }
 
+const options = {
+	threshold: 0.469,
+}
+const SongCardBlock = handleViewport(SongCard, options, /** config: {} **/);
+
 
 
 export default Eighteen;
-
-// onScroll={() => this.onScroll(song._id)}
-//onScroll={console.log('scroll', song._id)}
-//refField={(el) => this.yourElement = el} 
-
-	// setStartTime = (time) = {
-	// 	this.setState({
-	// 		startTime: time
-	// 	})
-	// }
-
-	// seekTo = (time) => {
-	// 	this.player.seekTo(time)
-	// }
-
-	// onPlay = () => {
- //    console.log('onPlay')
- //    seekTo()
- //    this.setState({ playing: true })
- //  }
-
-
-
-//onScroll={() => this.handleScroll(song._id)} 

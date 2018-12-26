@@ -1,6 +1,10 @@
 // ====================
 // song card
 // ====================
+.Song-card-18 {
+	margin: 4em 0;
+	
+}
 .card {
   max-width: 450px;
   min-height: 100vh;
@@ -43,4 +47,8 @@
 	  object-position: 50%;
 	  margin: 2em 0;
 	}
+}
+
+.hidden {
+	display: none;
 }

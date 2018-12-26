@@ -1,5 +1,6 @@
-@import 'list';
 @import 'hero';
+@import 'list';
+@import 'navbar';
 
 html, body {
 	background-color: #ffffff;
@@ -8,5 +9,14 @@ html, body {
 .App-2018 {
 	h1, h2, h3, h4, h5, h6, p, a {
 		color: #000000;
+	}
+}
+
+.Player {
+	position: fixed;
+	top: 0;
+	@media only screen and (max-width: 768px)  {
+		// width: 100%;
+		// height: auto;
 	}
 }

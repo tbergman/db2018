@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
 				<div className="bottom-span">
 					<span>Extreme listing by <a className="footer-link" href="https://dbradmusic.com" target="_blank" rel="noopener noreferrer">dbradmusic.com</a></span> | 
 					<span> Site by <a className="footer-link" href="http://taypsl.com" target="_blank" rel="noopener noreferrer">taypsl</a></span> | 
-					<span> Made with <span aria-label="love" role="img">❤️ </span> + <span aria-label="pizza" role="img">🍕 </span> in Berkeley, CA ©2017</span>
+					<span> Made with <span aria-label="love" role="img">❤️ </span> + <span aria-label="pizza" role="img">🍕 </span> in Berkeley, CA ©2018</span>
 				</div>
 			</div>
 		)
