@@ -7,16 +7,18 @@ function Nav(props) {
 	console.log(genres)
 	return (
 		<div className="Nav-18">
-			<div className="Logo-18">
-				<img src={Logo} alt="logo"/>
+			<div className="Nav-18-left">
+				<div className="Logo-18">
+					<img src={Logo} alt="logo"/>
+				</div>
+				<ul className="genre-list">
+					{genres.map((genre) => {
+						return (
+							<li>{genre}</li>
+						)
+					})}
+				</ul>
 			</div>
-			<ul className="genre-list">
-				{genres.map((genre) => {
-					return (
-						<li>{genre}</li>
-					)
-				})}
-			</ul>
 			<Navburger />
 		</div>
 	)
