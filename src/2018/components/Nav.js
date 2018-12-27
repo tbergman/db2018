@@ -6,6 +6,8 @@ function Nav(props) {
 	const genres = props.genres;
 	// const mobile = (props.width < 640) ? '' : 'hidden';
 	// const desktop = (props.width > 640) ? '' : 'hidden';
+	const selectedGenres = props.selectedGenres;
+	let selected; 
 
 	return (
 		<div className="Nav-18">
@@ -17,8 +19,13 @@ function Nav(props) {
 				<div className="">
 					<ul className="genre-list">
 						{genres.map((genre, i) => {
+							if (selectedGenres.includes(genre)) {
+								selected = 'selected'
+							} else {
+								selected = ''
+							}
 							return (
-								<li key={i} onClick={props.selectGenre}>{genre}</li>
+								<li key={i} className={selected} onClick={props.selectGenre}>{genre}</li>
 							)
 						})}
 					</ul>
