@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo-sm.svg';
+import Navburger from './Navburger';
 
 function Nav(props) {
 	const genres = props.genres;
@@ -8,14 +9,15 @@ function Nav(props) {
 		<div className="Nav-18">
 			<div className="Logo-18">
 				<img src={Logo} alt="logo"/>
-				<ul className="genre-list">
+			</div>
+			<ul className="genre-list">
 				{genres.map((genre) => {
 					return (
 						<li>{genre}</li>
 					)
 				})}
-				</ul>
-			</div>
+			</ul>
+			<Navburger />
 		</div>
 	)
 }
