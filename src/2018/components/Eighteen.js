@@ -84,6 +84,23 @@ const songData2018 = [
 	},
 ]
 
+const menuObj = {
+	"title": "Menu",
+	"links": [
+		{
+			"url": "/",
+			"linkTitle": "Home"
+		},
+		{
+			"url": "/2017",
+			"linkTitle": "2017"
+		},
+		{
+			"url": "https://www.dbradmusic.com",
+			"linkTitle": "dbradmusic.com"
+		}
+	]
+}
 
 
 class Eighteen extends Component {
@@ -98,7 +115,7 @@ class Eighteen extends Component {
 			inViewport: false,
 			width: 0,
 			height: 0,
-			genres: ["ROCK", "R&B", "POP", "INDIE", "RAP"],
+			genres: ["ALL", "ROCK", "R&B", "POP", "INDIE", "RAP"],
 			selectedGenres: []
 		}
 		// this.exampleRef = React.createRef()
@@ -130,6 +147,21 @@ class Eighteen extends Component {
 		})
 	}
 
+	selectGenre = (e) => {
+		const element = e.target.innerHTML;
+		const list = this.state.selectedGenres;
+		if (!list.includes(element)) {
+			// this.setState({
+			// 	selectedGenres: this.state.selectedGenres.filter((_, element) => element !== index)
+			// })
+			this.setState({
+				selectedGenres: [...this.state.selectedGenres, element]
+			})
+		} else {
+			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));
+		}
+	}
+
 	// isInViewport(offset = 0) {
 	// 	console.log('isInViewport')
 	//  }
@@ -145,18 +177,14 @@ class Eighteen extends Component {
 	render() {
 		const data = this.state.songData.songData2018;
 		const soundStatus = (this.state.soundOn === null) ? "hidden" : "";
-		// console.log('state.soundOn', this.state.soundOn);
-		// console.log('soundStatus', soundStatus)
-		//console.log('width and height', this.state.width, this.state.height)
 		const width = this.state.width;
-		//const height = this.state.height;
 		const muted = this.state.soundOn
-		// console.log(muted, "muted-eighteen")
+		const selectedGenres = this.state.selectedGenres;
+
 		return (
-			<div className="App-2018">
-				<Nav genres={this.state.genres} />
+			<div className="App-2018">																								
+				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
 				<Hero soundSelection={this.soundSelection}  />
-				
 				<section className={soundStatus}>
 				{data.map((song) => {
 					return (
@@ -181,7 +209,6 @@ const options = {
 	threshold: 0.469,
 }
 const SongCardBlock = handleViewport(SongCard, options, /** config: {} **/);
-
 
 
 export default Eighteen;

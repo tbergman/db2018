@@ -1,44 +1,14 @@
 import React from 'react';
 import Player from './Player.js'
-// import TrackVisibility from 'react-on-screen';
 
-// const SongCard = ({ isVisible, props }) => {
-// 	const text = isVisible ? 'In-viewport' : 'Not-in-viewport';
-
-// 	return (
-// 		<div className="Song-card-18" id={props._id} > 
-// 			<div className="card">
-// 			  <hr className={text}/>
-// 			  <div className="title-row">
-// 			    <h1>{props._id}</h1>
-// 			    <div className="title-text">
-// 			      <h4>{props.artist}</h4>
-// 			      <h2>{props.title}</h2>
-// 			    </div>
-// 			  </div>
-			  
-// 			  <p className="description">{props.description}</p>
-// 			  <p>{text}</p>
-// 			  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
-			  
-// 			</div>
-// 		</div>
-// 	)
-// }
-
-
-// ref={innerRef}
 const SongCard = (props: { inViewport: boolean }) => {
 
 	const { inViewport, innerRef } = props;
-	// const color = inViewport ? '#217ac0' : '#ff9800';
   const text = inViewport ? 'In-viewport' : 'Not-in-viewport';
-
-
 
   const playingStatus = inViewport ? true : false;
   const viewportWidth = `${props.width}px`;
-  const playerWidth = (viewportWidth < 640) ? viewportWidth : '640px';
+  const playerWidth = (props.width < 640) ? viewportWidth : '640px';
   const calcHeight = `${props.width * 0.6}px`;
   const playerHeight = (viewportWidth < 640) ? calcHeight : '360px'
   const hideVideo = (inViewport && props.width > 640) ? 'Player' : 'Player hidden';

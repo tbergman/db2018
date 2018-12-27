@@ -3,4 +3,18 @@
 	height: 100vh;
 	background-color: lime;
 	text-align: center;
+	.content-wrapper {
+		padding: 10%;
+		p {
+			margin: 1em 0;
+			.sound-selection {
+				font-weight: 600;
+				cursor: pointer;
+				&:hover {
+					color: white;
+				}
+			}
+		}
+
+	}
 }

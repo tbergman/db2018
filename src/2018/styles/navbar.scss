@@ -43,7 +43,7 @@
 
 .Navburger-18 {
   //margin-right: 40px;
-  margin:0 1em;
+  margin:0 2em;
   color: white;
   .dropdown-menu {
   	.dropdown-menu-item {
@@ -69,10 +69,12 @@
 }
 
 .dropdown-menu {
+	text-align: right;
   position: absolute;
   display: none;
   list-style-type: none;
   background: black;
+  right: -32px;
   // right: -48px;
   // top: 30px;
 }

@@ -4,22 +4,28 @@ import Navburger from './Navburger';
 
 function Nav(props) {
 	const genres = props.genres;
-	console.log(genres)
+	// const mobile = (props.width < 640) ? '' : 'hidden';
+	// const desktop = (props.width > 640) ? '' : 'hidden';
+
 	return (
 		<div className="Nav-18">
 			<div className="Nav-18-left">
 				<div className="Logo-18">
 					<img src={Logo} alt="logo"/>
 				</div>
-				<ul className="genre-list">
-					{genres.map((genre) => {
-						return (
-							<li>{genre}</li>
-						)
-					})}
-				</ul>
+
+				<div className="">
+					<ul className="genre-list">
+						{genres.map((genre, i) => {
+							return (
+								<li key={i} onClick={props.selectGenre}>{genre}</li>
+							)
+						})}
+					</ul>
+				</div>
+
 			</div>
-			<Navburger />
+			<Navburger menu={props.menu} />
 		</div>
 	)
 }
