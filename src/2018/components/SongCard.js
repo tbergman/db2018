@@ -14,23 +14,11 @@ const SongCard = (props: { inViewport: boolean }) => {
   const hideVideo = (inViewport && props.width > 640) ? 'Player' : 'Player hidden';
 
   const configVars = props.song.youtube ? {youtube: { playerVars: { start: props.song.start, end: props.song.end, iv_load_policy: 3, modestbranding: 1, loop: 1 } } } : { soundCloud: { options: { auto_play: true } } }
-  
-  let hideSong;
-  const selectedGenres = props.selectedGenres;
   const song = props.song;
-
-  if (selectedGenres === ["ALL"] ) {
-						hideSong = "Song-card-18"
-					} else if (song.genres.includes(...selectedGenres)) {
-						hideSong = "Song-card-18";
-					} else { 
-						hideSong = "Song-card-18 hidden";
-					}
-	console.log(selectedGenres)
-
+	const songVisibility = props.songIsSelected ? "Song-card-18" : "Song-card-18 hidden"
 
 	return (
-		<div className={hideSong} id={props.song._id} ref={innerRef}>
+		<div className={songVisibility} id={props.song._id} ref={innerRef}>
 			<div className={hideVideo}>
 				<Player 
 					url={props.song.videoUrl} 
