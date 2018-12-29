@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Hero from './Hero';
 import SongCard from './SongCard';
 import Footer from './Footer';
+import Player from './Player';
 import handleViewport from 'react-in-viewport';
 
 
@@ -108,10 +109,10 @@ const menuObj = {
 	]
 }
 
-const GENRE_FILTERS = {
-	"ROCK": song => song.ROCK,
-	"INDIE": song => song.ROCK,
-}
+// const GENRE_FILTERS = {
+// 	"ROCK": song => song.ROCK,
+// 	"INDIE": song => song.ROCK,
+// }
 
 class Eighteen extends Component {
 	constructor(props) {
@@ -192,20 +193,21 @@ class Eighteen extends Component {
 				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
 				<Hero soundSelection={this.soundSelection}  />
 				<section className={soundStatus}>
-				{data.map((song) => {
-					const songGenres = song.genres;
-					const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
-					return (
-						<SongCardBlock 
-							song={song} 
-							width={width}
-							id={song._id} 
-							key={song._id} 
-							playing={this.state.playing}
-							muted={muted} 
-							songIsSelected={songIsSelected} /> 
-					)
-				})}
+				// on hover, grab song id and update state 
+				// lookup song information by song id
+
+				
+				<PlayerAndCardContainer 
+					songData={data} 
+					width={width} 
+					playing={this.state.playing} 
+					muted={muted} 
+					 />
+
+				{/*<PlayerWrapper  />*/}
+
+
+				
 				</section>
 				<Footer visibility={soundStatus} />
 			</div>
@@ -216,7 +218,11 @@ class Eighteen extends Component {
 const options = {
 	threshold: 0.469,
 }
+
 const SongCardBlock = handleViewport(SongCard, options, /** config: {} **/);
+const PlayerAndCardContainer = handleViewport(SongCard, options, /** config: {} **/);
 
 
 export default Eighteen;
+
+{/* */}
