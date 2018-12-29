@@ -187,34 +187,14 @@ class Eighteen extends Component {
 		const muted = this.state.soundOn
 		const selectedGenres = this.state.selectedGenres;
 
-		//let hideSong;
-
 		return (
 			<div className="App-2018">																								
 				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
 				<Hero soundSelection={this.soundSelection}  />
 				<section className={soundStatus}>
 				{data.map((song) => {
-					
-					//console.log("selectedGenres", selectedGenres)
-					//console.log("song.genres", song.genres)
-					
-					{/*if (selectedGenres === []) {
-						hideSong = 'Song-card-18';
-					} else if (selectedGenres.includes(song.genre)) {
-						hideSong = 'Song-card-18';
-					} else {
-						hideSong = 'Song-card-18 hidden';
-					}*/}
-
 					const songGenres = song.genres;
-					//let songIsSelected;
 					const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
-					{/*var songIsSelectedFunction = function (selectedGenres, songGenres) {
-				    return songGenres.some(function (v) {
-				        return songIsSelected = selectedGenres.indexOf(v) >= 0;
-				    });
-					};*/}
 					return (
 						<SongCardBlock 
 							song={song} 
@@ -222,7 +202,6 @@ class Eighteen extends Component {
 							id={song._id} 
 							key={song._id} 
 							playing={this.state.playing}
-							selectedGenres={selectedGenres} 
 							muted={muted} 
 							songIsSelected={songIsSelected} /> 
 					)
