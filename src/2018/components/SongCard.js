@@ -13,13 +13,27 @@ const SongCard = (props: { inViewport: boolean }) => {
   const playerHeight = (viewportWidth < 640) ? calcHeight : '360px'
   const hideVideo = (inViewport && props.width > 640) ? 'Player' : 'Player hidden';
 
-  const configVars = props.props.youtube ? {youtube: { playerVars: { start: props.props.start, end: props.props.end, iv_load_policy: 3, modestbranding: 1, loop: 1 } } } : { soundCloud: { options: { auto_play: true } } }
-	
+  const configVars = props.song.youtube ? {youtube: { playerVars: { start: props.song.start, end: props.song.end, iv_load_policy: 3, modestbranding: 1, loop: 1 } } } : { soundCloud: { options: { auto_play: true } } }
+  
+  let hideSong;
+  const selectedGenres = props.selectedGenres;
+  const song = props.song;
+
+  if (selectedGenres === ["ALL"] ) {
+						hideSong = "Song-card-18"
+					} else if (song.genres.includes(...selectedGenres)) {
+						hideSong = "Song-card-18";
+					} else { 
+						hideSong = "Song-card-18 hidden";
+					}
+	console.log(selectedGenres)
+
+
 	return (
-		<div className="Song-card-18" id={props.props._id} ref={innerRef}>
+		<div className={hideSong} id={props.song._id} ref={innerRef}>
 			<div className={hideVideo}>
 				<Player 
-					url={props.props.videoUrl} 
+					url={props.song.videoUrl} 
 					config={configVars} 
 					width={playerWidth} 
 					height={playerHeight} 
@@ -30,14 +44,14 @@ const SongCard = (props: { inViewport: boolean }) => {
 			<div className="card">
 			  <hr className={text}/>
 			  <div className="title-row">
-			    <h1>{props.props._id}</h1>
+			    <h1>{props.song._id}</h1>
 			    <div className="title-text">
-			      <h4>{props.props.artist}</h4>
-			      <h2>{props.props.title}</h2>
+			      <h4>{props.song.artist}</h4>
+			      <h2>{props.song.title}</h2>
 			    </div>
 			  </div>
 			  
-			  <p className="description">{props.props.description}</p>
+			  <p className="description">{props.song.description}</p>
 			  <p>{text}</p>
 			  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
 			  
