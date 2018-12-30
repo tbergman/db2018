@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Hero from './Hero';
-import SongCard from './SongCard';
+// import SongCard from './SongCard';
+import SongCardTest from './SongCard-test';
 import Footer from './Footer';
 import handleViewport from 'react-in-viewport';
-
+import Player from './Player';
+import VisibilitySensor from 'react-visibility-sensor';
 
 //import songDataJSON from '../data/songData.json';
 //const videoUrl = 'https://www.youtube.com/embed/pa_4jV0qRTg'//watch?v=pYRgeHRtKvU&feature=youtu.be
@@ -108,10 +110,10 @@ const menuObj = {
 	]
 }
 
-const GENRE_FILTERS = {
-	"ROCK": song => song.ROCK,
-	"INDIE": song => song.ROCK,
-}
+// const GENRE_FILTERS = {
+// 	"ROCK": song => song.ROCK,
+// 	"INDIE": song => song.ROCK,
+// }
 
 class Eighteen extends Component {
 	constructor(props) {
@@ -153,6 +155,20 @@ class Eighteen extends Component {
 		})
 	}
 
+	onVisibilityChange = (id) => {
+		this.setState({ songId: id });
+	}
+
+
+	_onChange = (isVisible, param) => {
+    isVisible && console.log(param);
+	};
+
+
+	isInViewport = () => {
+		this.setState({ inViewport: true })
+	 }
+
 	selectGenre = (e) => {
 		const element = e.target.innerHTML;
 		const list = this.state.selectedGenres;
@@ -168,9 +184,7 @@ class Eighteen extends Component {
 	updateSongVisibility = (visibility) => {
 		this.setState({ hideSong: visibility })
 	}
-	// isInViewport(offset = 0) {
-	// 	console.log('isInViewport')
-	//  }
+	
 
 	handlePlaying = () => {
 		// if (this.state.soundOn) {
@@ -192,18 +206,24 @@ class Eighteen extends Component {
 				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
 				<Hero soundSelection={this.soundSelection}  />
 				<section className={soundStatus}>
+				<Player onVisibilityChange={this.onVisibilityChange} />
 				{data.map((song) => {
 					const songGenres = song.genres;
 					const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 					return (
-						<SongCardBlock 
-							song={song} 
-							width={width}
-							id={song._id} 
-							key={song._id} 
-							playing={this.state.playing}
-							muted={muted} 
-							songIsSelected={songIsSelected} /> 
+						<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, 'Hi there!')}>
+							{({ isVisible }) => {
+								return (
+									
+								<SongCardTest 
+									song={song} 
+									key={song._id} 
+									songIsSelected={songIsSelected} /> 
+
+
+								)
+							}}
+						</VisibilitySensor>
 					)
 				})}
 				</section>
@@ -213,10 +233,56 @@ class Eighteen extends Component {
 	}
 }
 
-const options = {
-	threshold: 0.469,
-}
-const SongCardBlock = handleViewport(SongCard, options, /** config: {} **/);
 
 
 export default Eighteen;
+
+/* 
+
+<div className="card">
+										  <hr />
+										  <div className="title-row">
+										    <h1>{song._id}</h1>
+										    <div className="title-text">
+										      <h4>{song.artist}</h4>
+										      <h2>{song.title}</h2>
+										    </div>
+										  </div>
+										  
+										  <p className="description">{song.description}</p>
+										  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
+										  
+										</div>
+
+
+
+
+
+
+//////////
+<SongCardTest 
+									
+									song={song} 
+									key={song._id} 
+									songIsSelected={songIsSelected} /> 
+
+
+
+
+
+const options = {
+	threshold: 0.469,
+}
+const SongCardBlock = handleViewport(SongCard, options, config: {} );
+
+<SongCardBlock 
+								onVisibilityChange={this.onVisibilityChange}
+								isInViewport={this.state.inViewport}
+								song={song} 
+								width={width}
+								id={song._id} 
+								key={song._id} 
+								playing={this.state.playing}
+								muted={muted} 
+								songIsSelected={songIsSelected} /> 
+*/

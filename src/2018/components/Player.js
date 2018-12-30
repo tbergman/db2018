@@ -2,9 +2,12 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 
 function Player(props) {
-	//console.log(props.height, "props.height")
+	// console.log(props.height, "props.height")
+	// songId={props.id}
   return (
+
   	<ReactPlayer 
+
 	  	url={props.url} 
 	  	config={props.config} 
 	  	width={props.width} 
