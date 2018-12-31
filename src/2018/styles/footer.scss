@@ -1,0 +1,48 @@
+.Footer-18 {
+	background-color: black;
+	color: white;
+	font-size: 0.8rem;
+	opacity: 1;
+	.footer-links-container {
+		display: flex;
+		justify-content: center;
+	}
+	.footer-links-item {
+		h4 {
+			font-size: 1em;
+			color: white;
+			margin: 0 0 1em 0;
+		}
+	}
+	a.footer-link {
+		color: white;
+	}
+}
+
+// ===========
+// footer 2017 styles
+// ===========
+.footer {
+  // margin-left: 27%;
+  // text-align: center;
+} 
+
+.footer-links-item {
+  //margin: 2rem;
+}
+
+.bottom-span {
+  padding-bottom: 2rem; 
+  text-align: center;
+  background-color: #000000;
+}
+
+.footer-link-div {
+ // margin-bottom: 0.7rem;
+}
+
+a.footer-link:hover {
+  //text-decoration: underline;
+  //text-underline-position: under;
+  //color: $light-grey;
+}
