@@ -19,7 +19,7 @@ function Nav(props) {
 				<div className="">
 					<ul className="genre-list">
 						{genres.map((genre, i) => {
-						  if (selectedGenres.includes(genre) && genre != "ALL") {
+						  if (selectedGenres.includes(genre) && genre !== "ALL") {
 								selected = 'selected'
 							} else if (genre === "ALL") {
 								selected = 'all'

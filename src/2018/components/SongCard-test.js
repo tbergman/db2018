@@ -6,8 +6,7 @@ function SongCardTest(props) {
 	//console.log('song Id, song start, end', props.song._id, props.song.start, props.song.end)
 	return (
 
-		<div className={songVisibility} id={props.song._id}>
-			<div id={props.song._id} className="Song-card-18" >
+		<div className={songVisibility} id={props.song._id} >
 					
 				<div className="card">
 				  <hr />
@@ -23,7 +22,6 @@ function SongCardTest(props) {
 				  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
 				  
 				</div>
-			</div>
 		</div>
 	)
 }

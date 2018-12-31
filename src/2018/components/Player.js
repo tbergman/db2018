@@ -13,7 +13,7 @@ const Player = (props) => {
   //const playerHeight = (viewportWidth < 640) ? calcHeight : '360px'
   const hideVideo = (isVisible && props.width > 640) ? 'Player' : 'Player hidden';
   const currentSong = props.currentSong[0]
-  console.log(props.currentSong[0], "why")
+  //console.log(props.currentSong[0], "why")
   const configVars = currentSong.youtube ? {youtube: { playerVars: { start: props.currentSong[0].start, end: currentSong.end, iv_load_policy: 3, modestbranding: 1, loop: 1 } } } : { soundCloud: { options: { auto_play: true } } }
   //console.log(configVars)
   const isPlaying = isVisible ? true : false

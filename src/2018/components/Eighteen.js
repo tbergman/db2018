@@ -118,6 +118,8 @@ const menuObj = {
 class Eighteen extends Component {
 	constructor(props) {
 		super(props);
+				this.songCardRef = React.createRef();
+
 		this.state = {
 			songData: {songData2018},
 			soundOn: null, 
@@ -134,9 +136,6 @@ class Eighteen extends Component {
 	}
 
 	componentDidMount() {
-		// const songCardLine = document.getElementsByClassName('In-viewport');
-		//console.log(songCardLine, 'song card line')	
-		// update window dimensions when screen resized
 		this.updateWindowDimensions();
 	  window.addEventListener('resize', this.updateWindowDimensions);  
 	};
@@ -152,18 +151,20 @@ class Eighteen extends Component {
 	soundSelection = (val) => {
 		this.handlePlaying();
 		this.setState({
-			soundOn: val
+			soundOn: val,
 		})
+	 	window.scrollTo({
+      top:this.songCardRef.current.offsetTop, 
+      behavior: "smooth"   // Optional, adds animation
+    });
 	}
 
-	// onVisibilityChange = (id) => {
-	// 	console.log(id, "onVisibilityChange")
-	// 	this.setState({ songId: id });
-	// }
-
+	// scrollToMyRef = () => {   // run this method to execute scrolling. 
+ //    	console.log("scrollToMyRef")
+ //  }
 
 	_onChange = (isVisible, param) => {
-    console.log(isVisible, param, "_onChange")
+    //console.log(isVisible, param, "_onChange")
     this.setVideoUrl(param)
     this.isInViewport(isVisible)
     this.setState({ songId: param})
@@ -176,20 +177,24 @@ class Eighteen extends Component {
 	}
 
 	isInViewport = (visibility) => {
-		console.log(visibility, "isInViewport")
+		//console.log(visibility, "isInViewport")
 		this.setState({ inViewport: visibility })
 	 }
 
 	selectGenre = (e) => {
 		const element = e.target.innerHTML;
 		const list = this.state.selectedGenres;
-		// if (element === "ALL") {
-		// 	this.setState({ selectedGenres: [] });
-		// } else 
-
-		if (!list.includes(element)) {
+		if (element === "ALL") { // if all is selected, clear state and replace with "ALL"
+			this.setState({ selectedGenres: ["ALL"] });
+		} else if (list.length === 1 && list.includes(element) ) {
+			this.setState({ selectedGenres: ["ALL"]})
+		} else if (!list.includes(element) && !list.includes("ALL")) { //if alement is not in list, add it
 			this.setState({ selectedGenres: [...this.state.selectedGenres, element] });
-		} else {
+		} else if (list.includes("ALL")) { // if adding an element, remove "ALL" from list
+			const allIndex = list.indexOf("ALL");
+			const newList = list.splice(allIndex, 1, element);
+			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.splice(allIndex, 1, element) }));
+		} else { // if element 
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));
 		}
 	}
@@ -222,9 +227,9 @@ class Eighteen extends Component {
 		return (
 			<div className="App-2018">																								
 				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
-				<Hero soundSelection={this.soundSelection}  />
-				<section className={soundStatus}>
-					
+				<Hero soundSelection={this.soundSelection} />
+				<div ref={this.songCardRef}></div>
+				<section className={soundStatus} >
 					<div className="col col-right">
 						{data.map((song) => {
 						const songGenres = song.genres;
@@ -232,7 +237,7 @@ class Eighteen extends Component {
 						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 
 						return (
-							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} offset={{top:0}} >
+							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} offset={{top:0}} minTopValue={300} >
 								{({ isVisible }) => {
 									//console.log(isVisible, song._id, "isVisible map")
 									return (
