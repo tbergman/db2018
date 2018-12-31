@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import VisibilitySensor from 'react-visibility-sensor';
 
 function SongCard(props) {
 	const songVisibility = props.songIsSelected ? "Song-card-18" : "Song-card-18 hidden";
@@ -15,13 +16,23 @@ function SongCard(props) {
 					
 				<div className="card">
 				  <hr />
-				  <div className="title-row">
-				    <h1>{props.song._id}</h1>
-				    <div className="title-text">
-				      <h4>{props.song.artist}</h4>
-				      <h2>"{props.song.title}"</h2>
-				    </div>
-				  </div>
+				  <VisibilitySensor key={props.song._id} onChange={props.onChange} containment={props.containment} scrollDelay={50} minTopValue={20}>
+						{({ isVisible }) => {
+							return (
+
+
+						  <div className="title-row">
+						    <h1>{props.song._id}</h1>
+						    <div className="title-text">
+						      <h4>{props.song.artist}</h4>
+						      <h2>"{props.song.title}"</h2>
+						    </div>
+						  </div>
+
+
+						 );
+						}}
+					</VisibilitySensor>
 				  
 				  <div className="description">{_parsedDesc}</div>
 				  <img src={props.song.imgURL} alt={props.song.artist} />
