@@ -35,6 +35,15 @@ html, body {
 	}
 }
 
+#videoInView {
+	position: fixed;
+	height: 450px;
+	width: 100vw;
+	background-color: black;
+	opacity: 0.2;
+	top: -25%;
+}
+
 .Player {
 	position: fixed;
 	margin: 55px auto;

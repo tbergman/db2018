@@ -45,12 +45,18 @@ class Eighteen extends Component {
 			height: 0,
 			genres: ["ALL", "ROCK", "R&amp;B", "POP", "INDIE", "RAP"],
 			selectedGenres: ["ALL"],
+			getElement: null
 		}
 	}
 
 	componentDidMount() {
 		this.updateWindowDimensions();
 	  window.addEventListener('resize', this.updateWindowDimensions);  
+	  this.setState(() => {
+      return {
+        getElement: document.getElementById("videoInView")
+      };
+    });
 	};
 
 	componentWillUnmount() {
@@ -138,6 +144,11 @@ class Eighteen extends Component {
 		const selectedGenres = this.state.selectedGenres;
 		const currentSongObj = data.filter(song => song._id === this.state.songId);
 		const times = [this.state.startTime, this.state.endTime];
+		
+		const containmentDOMRect = this.state.getElement
+      ? this.state.getElement
+      : null;
+
 
 		return (
 			<div className="App-2018">																								
@@ -160,24 +171,23 @@ class Eighteen extends Component {
           </div>
           <div className="col-right"></div>
 				</div>
-
+				<div id="videoInView"></div>
 				<section className={listSoundStatus} > 
-					<div className="col col-left">
+					<div className="col col-left" >
+					
 						{data.map((song) => {
 						const songGenres = song.genres;
 						const songId = song._id;
 						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 						return (
-							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} minTopValue={20}>
-								{({ isVisible }) => {
-									return (
+							
 										<SongCard 
 											song={song} 
 											key={song._id} 
-											songIsSelected={songIsSelected} /> 
-									)
-								}}
-							</VisibilitySensor>
+											songIsSelected={songIsSelected} 
+											onChange={isVisible => this._onChange(isVisible, songId)} 
+											containment={containmentDOMRect} /> 
+									
 							)
 						})}
 					</div>
