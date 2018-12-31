@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import Hero from './Hero';
 // import SongCard from './SongCard';
-import SongCardTest from './SongCard-test';
+import SongCard from './SongCard';
 import Footer from './Footer';
 import handleViewport from 'react-in-viewport';
 import Player from './Player';
@@ -148,15 +148,21 @@ class Eighteen extends Component {
 	  this.setState({ width: window.innerWidth, height: window.innerHeight });
 	}
 	// set & update user sound preferences
-	soundSelection = (val) => {
+	initialSoundSelection = (val) => {
 		this.handlePlaying();
-		this.setState({
-			soundOn: val,
-		})
-	 	window.scrollTo({
-      top:this.songCardRef.current.offsetTop, 
-      behavior: "smooth"   // Optional, adds animation
-    });
+		this.setState( 
+			{ soundOn: val },
+			() => window.scrollTo({ // add callback so function can access updated state
+	      top:this.songCardRef.current.offsetTop, 
+	      behavior: "smooth"   
+	    }))
+	}
+
+	toggleSound = (val) => {
+		
+			this.setState({
+				soundOn: !val,
+			})
 	}
 
 	// scrollToMyRef = () => {   // run this method to execute scrolling. 
@@ -202,7 +208,6 @@ class Eighteen extends Component {
 	updateSongVisibility = (visibility) => {
 		this.setState({ hideSong: visibility })
 	}
-	
 
 	handlePlaying = () => {
 		// if (this.state.soundOn) {
@@ -214,10 +219,11 @@ class Eighteen extends Component {
 
 	render() {
 		const data = this.state.songData.songData2018;
-		const soundStatus = (this.state.soundOn === null) ? "List-container hidden" : "List-container";
+		const listSoundStatus = (this.state.soundOn === null) ? "List-container hidden" : "List-container";
+		const locked = (this.state.soundOn === null) ? "fix-position" : "";
 		const width = this.state.width;
 		const isVisible = this.state.inViewport;
-
+		const soundStatus = (this.state.soundOn === null) ? "hidden" : " ";
 
 
 		const soundChoice = this.state.soundOn
@@ -226,23 +232,33 @@ class Eighteen extends Component {
 		// console.log(this.state.songUrl, "this.state.songUrl")
 		return (
 			<div className="App-2018">																								
-				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
-				<Hero soundSelection={this.soundSelection} />
+				<Nav 
+					genres={this.state.genres} 
+					menu={menuObj} 
+					width={width} 
+					selectGenre={(e) => this.selectGenre(e)} 
+					selectedGenres={selectedGenres} 
+					visibility={soundStatus}
+					soundChoice={soundChoice}
+					toggleSound={() => this.toggleSound(soundChoice)}
+					muted={!soundChoice} />
+				<Hero soundSelection={this.initialSoundSelection} locked={locked}/>
 				<div ref={this.songCardRef}></div>
-				<section className={soundStatus} >
-					<div className="col col-right">
+				
+				<section className={listSoundStatus} > 
+					<div className="col col-left">
 						{data.map((song) => {
 						const songGenres = song.genres;
 						const songId = song._id;
 						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 
 						return (
-							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} offset={{top:0}} minTopValue={300} >
+							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50}>
 								{({ isVisible }) => {
 									//console.log(isVisible, song._id, "isVisible map")
 									return (
 										
-									<SongCardTest 
+									<SongCard 
 										song={song} 
 										key={song._id} 
 										songIsSelected={songIsSelected} /> 
@@ -254,7 +270,7 @@ class Eighteen extends Component {
 							)
 						})}
 					</div>
-					<div className="col col-left">
+					<div className="col col-right">
 						<Player 
 							songId={this.state.songId} 
 							currentSong={currentSongObj}

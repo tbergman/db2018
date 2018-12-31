@@ -5,10 +5,9 @@
 	height: 45px;
 	background-color: black;
 	position: fixed;
+	z-index: 10;
 	.Nav-18-left {
 		display: flex;
-		
-		
 		.Logo-18 {
 			width: 42px;
 			height: 42px;
@@ -48,6 +47,13 @@
 				text-transform: lowercase;
 				&:before {content: "clear ";}
 			}
+		}
+	}
+	.Nav-18-right {
+		display: flex;
+		justify-content: flex-end;
+		.sound-icon {
+			width: 40px;
 		}
 	}
 	

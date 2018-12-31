@@ -4,11 +4,16 @@
 .List-container {
 	display: flex;
 	.col-left {
-		flex-grow: 2;
-	}
-	.col-right {
 		flex-grow: 1;
 	}
+	.col-right {
+		flex-grow: 2;
+	}
+	@media only screen and (max-width: 768px) {
+		display: block;
+		padding: 1em;
+	}
+
 }
 
 // ====================
@@ -25,6 +30,7 @@
   letter-spacing: 1px;
   hr {
 	  border: 3px solid black;
+	  margin: 2em auto;
 	}
 	.title-row {
 	  display: flex;
@@ -48,7 +54,7 @@
 	}
 	p {
 	  text-align: justify;  
-	  margin-top: 1em;
+	  margin-top: 2em;
 	  line-height: 1.2em;
 	  font-size: 1em;
 	}

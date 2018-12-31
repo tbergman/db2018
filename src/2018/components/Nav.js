@@ -1,14 +1,21 @@
 import React from 'react';
 import Logo from '../images/logo-sm.svg';
 import Navburger from './Navburger';
+import soundOn from '../images/on.svg';
+import soundOff from '../images/off.svg';
 
 function Nav(props) {
 	const genres = props.genres;
+
 	// const mobile = (props.width < 640) ? '' : 'hidden';
 	// const desktop = (props.width > 640) ? '' : 'hidden';
+	const soundIcon = (props.soundChoice) ? soundOn : soundOff ; 
 	const selectedGenres = props.selectedGenres;
+	const soundVisibility = (props.visibility === "hidden") ? "sound-icon hidden" : "sound-icon" ;
+	//console.log(props.visibility, "props.visibility Nav")
 	let selected; 
 
+	//const genreVisibility = `${props.visibility} genre-list`
 	return (
 		<div className="Nav-18">
 			<div className="Nav-18-left">
@@ -16,7 +23,7 @@ function Nav(props) {
 					<img src={Logo} alt="logo"/>
 				</div>
 
-				<div className="">
+				<div className={props.visibility}>
 					<ul className="genre-list">
 						{genres.map((genre, i) => {
 						  if (selectedGenres.includes(genre) && genre !== "ALL") {
@@ -32,9 +39,11 @@ function Nav(props) {
 						})}
 					</ul>
 				</div>
-
 			</div>
-			<Navburger menu={props.menu} />
+			<div className="Nav-18-right">
+				<img className={soundVisibility} alt="volume toggle" src={soundIcon} onClick={props.toggleSound} />
+				<Navburger menu={props.menu} />
+			</div>
 		</div>
 	)
 }
