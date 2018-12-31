@@ -164,18 +164,12 @@ class Eighteen extends Component {
  //  }
 
 	_onChange = (isVisible, param) => {
-    //console.log(isVisible, param, "_onChange")
     if (isVisible) {
     	this.setVideoUrl(param)
-    	this.setState(
-    		{ songId: param, inViewport: isVisible })
+    	this.setState({ songId: param, inViewport: isVisible })
     } else {
     	this.isInViewport(isVisible)
     }
-    	//this.setVideoUrl(param)
-    	//this.isInViewport(isVisible)
-   		
-    
 	};
 
 	setVideoUrl = (id) => {
@@ -183,7 +177,6 @@ class Eighteen extends Component {
 		const currentSongUrl = currentSongObj[0].videoUrl;
 		const currentSongStart = currentSongObj[0].start;
 		const currentSongEnd = currentSongObj[0].end;
-		console.log(currentSongStart, currentSongEnd, "setVideoUrl")
 		this.setState({ 
 			songUrl: currentSongUrl,
 			startTime: currentSongStart,
@@ -192,7 +185,6 @@ class Eighteen extends Component {
 	}
 
 	isInViewport = (visibility) => {
-		//console.log(visibility, "isInViewport")
 		this.setState({ inViewport: visibility })
 	 }
 
@@ -232,13 +224,10 @@ class Eighteen extends Component {
 		const width = this.state.width;
 		const isVisible = this.state.inViewport;
 		const soundStatus = (this.state.soundOn === null) ? "hidden" : " ";
-		//console.log(this.state.songId, 'this.state.songId')
 
 		const soundChoice = this.state.soundOn
 		const selectedGenres = this.state.selectedGenres;
 		const currentSongObj = data.filter(song => song._id === this.state.songId);
-		//console.log(currentSongObj[0], 'currentSongObj[0]')
-		//console.log(this.state.songId, 'this.state.songId')
 		const times = [this.state.startTime, this.state.endTime];
 		
 		return (
@@ -255,7 +244,25 @@ class Eighteen extends Component {
 					muted={!soundChoice} />
 				<Hero soundSelection={this.initialSoundSelection} locked={locked}/>
 				<div ref={this.songCardRef}></div>
-				{console.log(times, "times")}
+
+				<div className={listSoundStatus}>
+					<div className="Intro-18 col-left">
+						<div className="card">
+							<p><span className="first-line">2017 was a dark year in many respects</span>
+								, but music allows us to feel the gamut of emotions, 
+			          regardless of what’s going on around us. A song can mirror and solidify what you’re feeling, 
+			          or can change your mood altogether. A song can also inspire, surprise, or disappoint, 
+			          depending on its context. Music subverted expectations in 2017 -- rap was dominated by 
+			          flute samples, Calvin Harris made funk songs, Courtney Barnett and Kurt Vile teamed up for 
+			          a whole album, Lorde and Kendrick Lamar got even better, and Harry Styles sounded like David 
+			          Bowie.
+		           </p>
+		           </div>
+           	</div>
+           <div className="col-right"></div>
+				</div>
+
+
 				<section className={listSoundStatus} > 
 					<div className="col col-left">
 						{data.map((song) => {
@@ -266,7 +273,6 @@ class Eighteen extends Component {
 						return (
 							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50}>
 								{({ isVisible }) => {
-									{console.log(song._id, "song._id", isVisible, "VisibilitySensor")}
 									return (
 										<SongCard 
 											song={song} 

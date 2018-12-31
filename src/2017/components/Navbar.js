@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Logo } from '../../2018/images/logo_1.svg'
 import '../css/App.css';
 
 // import { Topbar } from '../img/topbar.svg';
@@ -8,8 +9,13 @@ function Navbar(props) {
   return (
     <div className='Navbar'>
         <div className="Navbar-bar"></div>
-        <div className='Navbar-logo'>
-        <a href='/'>D-BRAD'S BEST SONGS OF 2017</a>
+        <div className="Navbar-2017-flex">
+          {/*<div className="Home-icon">
+            <a href='/'><img alt="main logo" src={Logo} /></a>
+          </div>*/}
+          <div className='Navbar-logo'>
+            <a href='/2017'>D-BRAD'S BEST SONGS OF 2017</a>
+          </div>
         </div>
 
         <div className='Navbar-links'>

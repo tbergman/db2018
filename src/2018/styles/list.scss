@@ -9,11 +9,19 @@
 	.col-right {
 		flex-grow: 2;
 	}
+	.Intro-18 {
+		margin-top: 3em;
+	}
+
+	.first-line {
+		text-transform: uppercase;
+		font-weight: bolder;
+	}
+
 	@media only screen and (max-width: 768px) {
 		display: block;
 		padding: 1em;
 	}
-
 }
 
 // ====================
