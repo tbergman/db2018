@@ -174,10 +174,7 @@ class Eighteen extends Component {
 				<div id="videoInView"></div>
 				<section className={listSoundStatus} > 
 					<div className="col col-left" >
-						
-				
-
-
+					
 						{data.map((song) => {
 						const songGenres = song.genres;
 						const songId = song._id;

@@ -19,8 +19,6 @@ function SongCard(props) {
 				  <VisibilitySensor key={props.song._id} onChange={props.onChange} containment={props.containment} scrollDelay={50} minTopValue={20}>
 						{({ isVisible }) => {
 							return (
-
-
 						  <div className="title-row">
 						    <h1>{props.song._id}</h1>
 						    <div className="title-text">
@@ -28,8 +26,6 @@ function SongCard(props) {
 						      <h2>"{props.song.title}"</h2>
 						    </div>
 						  </div>
-
-
 						 );
 						}}
 					</VisibilitySensor>
