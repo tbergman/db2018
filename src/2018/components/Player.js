@@ -11,6 +11,7 @@ const Player = (props) => {
 
   const checkMobile = (props.width <= 768) ? 'mobile' : ''; 
   const mobilePlayer = (checkMobile === 'mobile' && props.muted) ? 'Player hidden' : 'Player';
+  //const mobilePlayer = (props.width <= 768) ? 'Player hidden' : 'Player';
   const hideUntilVisible = (isVisible) ? '' : 'hidden';
   const currentSong = props.currentSong[0]
   const startTime = props.times[0];

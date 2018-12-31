@@ -43,9 +43,11 @@
 	}
 
 	.genre-list-container {
+
 		.genre-list-title {
 			font-family: "Open Sans", sans-serif;
 			display: none;
+			margin-right: 3em;
 		}
 		.genre-list {
 			display: -webkit-box;
@@ -93,7 +95,7 @@
 				list-style: none;
 				position:absolute;
 				top: 100%;
-				left: 0;
+				left: -30px;
 			}
 			&:hover {
 				.genre-list {
