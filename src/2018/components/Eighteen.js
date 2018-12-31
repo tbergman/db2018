@@ -159,10 +159,9 @@ class Eighteen extends Component {
 	}
 
 	toggleSound = (val) => {
-		
-			this.setState({
-				soundOn: !val,
-			})
+		this.setState({
+			soundOn: !val,
+		})
 	}
 
 	// scrollToMyRef = () => {   // run this method to execute scrolling. 
@@ -255,15 +254,11 @@ class Eighteen extends Component {
 						return (
 							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50}>
 								{({ isVisible }) => {
-									//console.log(isVisible, song._id, "isVisible map")
 									return (
-										
-									<SongCard 
-										song={song} 
-										key={song._id} 
-										songIsSelected={songIsSelected} /> 
-
-
+										<SongCard 
+											song={song} 
+											key={song._id} 
+											songIsSelected={songIsSelected} /> 
 									)
 								}}
 							</VisibilitySensor>

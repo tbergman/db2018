@@ -24,20 +24,23 @@ function Nav(props) {
 				</div>
 
 				<div className={props.visibility}>
-					<ul className="genre-list">
-						{genres.map((genre, i) => {
-						  if (selectedGenres.includes(genre) && genre !== "ALL") {
-								selected = 'selected'
-							} else if (genre === "ALL") {
-								selected = 'all'
-							} else {
-								selected = ''
-							} 
-							return (
-								<li key={i} className={selected} onClick={props.selectGenre}>{genre}</li>
-							)
-						})}
-					</ul>
+					<div className="genre-list-container">
+						<div className="genre-list-title">Genres</div>
+						<ul className="genre-list">
+							{genres.map((genre, i) => {
+							  if (selectedGenres.includes(genre) && genre !== "ALL") {
+									selected = 'selected'
+								} else if (genre === "ALL") {
+									selected = 'all'
+								} else {
+									selected = ''
+								} 
+								return (
+									<li key={i} className={selected} onClick={props.selectGenre}>{genre}</li>
+								)
+							})}
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div className="Nav-18-right">
