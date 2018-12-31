@@ -168,16 +168,14 @@ class Eighteen extends Component {
 						const songId = song._id;
 						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 						return (
-							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} minTopValue={20}>
-								{({ isVisible }) => {
-									return (
+
 										<SongCard 
 											song={song} 
 											key={song._id} 
-											songIsSelected={songIsSelected} /> 
-									)
-								}}
-							</VisibilitySensor>
+											songIsSelected={songIsSelected}
+											onChange={isVisible => this._onChange(isVisible, songId)} 
+											/> 
+
 							)
 						})}
 					</div>

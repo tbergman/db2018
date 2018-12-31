@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import VisibilitySensor from 'react-visibility-sensor';
 
 function SongCard(props) {
 	const songVisibility = props.songIsSelected ? "Song-card-18" : "Song-card-18 hidden";
@@ -8,6 +9,10 @@ function SongCard(props) {
 
   const _JSONListen = props.song.listen;
   const _parsedListen = ReactHtmlParser(_JSONListen);
+
+	const divStyle = {
+	  height: '10px',
+	};
 
 	return (
 
@@ -24,6 +29,13 @@ function SongCard(props) {
 				  </div>
 				  
 				  <div className="description">{_parsedDesc}</div>
+				  <VisibilitySensor key={props.song._id} onChange={props.onChange} scrollDelay={50} partialVisibility={{top:true}}>
+				  	{({ isVisible }) => {
+							return (
+								<div className="visibility-check" style={divStyle}></div>
+							) 
+						}}
+				  </VisibilitySensor>
 				  <img src={props.song.imgURL} alt={props.song.artist} />
 				  <div className="listen">{_parsedListen}</div>
 				  
@@ -33,3 +45,6 @@ function SongCard(props) {
 }
 
 export default SongCard;
+
+
+/* minTopValue={20} */
