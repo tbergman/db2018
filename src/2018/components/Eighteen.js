@@ -187,6 +187,7 @@ class Eighteen extends Component {
 			this.setState({ selectedGenres: [...this.state.selectedGenres, element] });
 		} else if (list.includes("ALL")) { // if adding an element, remove "ALL" from list
 			const allIndex = list.indexOf("ALL");
+			const newList = list.splice(allIndex, 1, element);
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.splice(allIndex, 1, element) }));
 		} else { // pop out when clicked a second time
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));
