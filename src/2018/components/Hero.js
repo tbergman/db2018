@@ -1,6 +1,6 @@
 import React from 'react';
 import heroImage from '../images/2018-hero.jpg';
-import heroOverlay from '../images/static-4.gif';
+import heroOverlay from '../images/sound-4.gif';
 
 function Hero(props) {
 	return (

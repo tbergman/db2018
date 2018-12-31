@@ -17,83 +17,94 @@
 				background-size: contain;
 			}
 		}
-		.genre-list-container {
-			.genre-list-title {
-				display: none;
-			}
-			.genre-list {
-				display: flex;
-				position: relative;
-				padding: 8px 0;
-				li {
-					border: 1px solid white;
-			    color: white;
-			    padding: 0 10px;
-			    border-radius: 20px;
-			    margin: 0 0.5em;
-			    line-height: 27px;
-					&:hover {
-						color: black;
-						background-color: white;
-						cursor: pointer;
-					}
-				}
-				li.selected {
-					color: black;
-					background-color: $blue;
-					border: 1px solid;
-					&:before {
-						content: "\00d7 ";
-					}
-				}
-				li.all {
-					border: none;
-					text-transform: lowercase;
-					&:before {content: "clear ";}
-				}
-			}
-			@media only screen and (max-width: 768px) {
-				display: inline-block;
-				position: relative;
-				margin-top: 14px;
-				.genre-list-title {
-					display: block;
-					color: white;
-				}
-				.genre-list {
-					display: none;
-					list-style: none;
-					position:absolute;
-					top: 100%;
-					left: 0;
-				}
-				&:hover {
-					.genre-list {
-						display: inline-block;
-						background-color: black;
-						width: 130px;
-						li {
-							margin: 10px;
-						}
-						li.selected {
-							color: black;
-							background-color: $blue;
-							border: 1px solid;
-
-							&:before {
-								content: "";
-							}
-						}
-					}
-				}
-			}
+		.Nav-title {
+			color: white;
+			text-transform: uppercase;
+			font-family: "Open Sans", sans-serif;
+			margin-top: 14px;
 		}
+
 	}
 	.Nav-18-right {
 		display: flex;
 		justify-content: flex-end;
 		.sound-icon {
 			width: 40px;
+			margin: 0 1em;
+		}
+
+	}
+
+	.genre-list-container {
+		.genre-list-title {
+			font-family: "Open Sans", sans-serif;
+			display: none;
+		}
+		.genre-list {
+			display: flex;
+			position: relative;
+			padding: 8px 0;
+			li {
+				border: 1px solid white;
+		    color: white;
+		    padding: 0 10px;
+		    border-radius: 20px;
+		    margin: 0 0.5em;
+		    line-height: 27px;
+				&:hover {
+					color: black;
+					background-color: white;
+					cursor: pointer;
+				}
+			}
+			li.selected {
+				color: black;
+				background-color: $blue;
+				border: 1px solid;
+				&:before {
+					content: "\00d7 ";
+				}
+			}
+			li.all {
+				border: none;
+				text-transform: lowercase;
+				&:before {content: "clear ";}
+			}
+		}
+		@media only screen and (max-width: 768px) {
+			display: inline-block;
+			position: relative;
+			margin-top: 14px;
+			.genre-list-title {
+				display: block;
+				color: white;
+			}
+			.genre-list {
+				display: none;
+				list-style: none;
+				position:absolute;
+				top: 100%;
+				left: 0;
+			}
+			&:hover {
+				.genre-list {
+					display: inline-block;
+					background-color: black;
+					width: 130px;
+					li {
+						margin: 10px;
+					}
+					li.selected {
+						color: black;
+						background-color: $blue;
+						border: 1px solid;
+
+						&:before {
+							content: "";
+						}
+					}
+				}
+			}
 		}
 	}
 	

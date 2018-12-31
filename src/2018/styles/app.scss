@@ -23,7 +23,7 @@ html, body {
 	p, ul, li, a {
 		font-family: "Open Sans", sans-serif;
 	}
-	
+
 	@media only screen and (max-width: 768px) {
 		h1 { font-weight: 600; font-size: 3.5em; }
 		h2 { font-weight: 500; font-size: 3.25em; }
@@ -39,7 +39,10 @@ html, body {
 	margin: 55px auto;
 	top: 0;
 	@media only screen and (max-width: 768px)  {
-		width: 100%;
+		display: flex;
+		justify-content: center;
+		left:0;
+		right: 0;
 		height: auto;
 	}
 }

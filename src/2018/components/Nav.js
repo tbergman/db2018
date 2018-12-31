@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo-sm.svg';
-import Navburger from './Navburger';
+//import Navburger from './Navburger';
 import soundOn from '../images/on.svg';
 import soundOff from '../images/off.svg';
 
@@ -22,12 +22,15 @@ function Nav(props) {
 				<div className="Logo-18">
 					<img src={Logo} alt="logo"/>
 				</div>
-
+				<div className="Nav-title">D-Brad's Best Songs of 2018</div>
+			</div>
+			<div className="Nav-18-right">
 				<div className={props.visibility}>
 					<div className="genre-list-container">
 						<div className="genre-list-title">Genres</div>
 						<ul className="genre-list">
 							{genres.map((genre, i) => {
+								console.log(genre, "genre")
 							  if (selectedGenres.includes(genre) && genre !== "ALL") {
 									selected = 'selected'
 								} else if (genre === "ALL") {
@@ -35,17 +38,17 @@ function Nav(props) {
 								} else {
 									selected = ''
 								} 
+								const displayGenre = (genre === "R&amp;B") ? "R&B" : genre;
+
 								return (
-									<li key={i} className={selected} onClick={props.selectGenre}>{genre}</li>
+									<li key={i} className={selected} onClick={props.selectGenre}>{displayGenre}</li>
 								)
 							})}
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div className="Nav-18-right">
 				<img className={soundVisibility} alt="volume toggle" src={soundIcon} onClick={props.toggleSound} />
-				<Navburger menu={props.menu} />
+				{/*<Navburger menu={props.menu} />*/}
 			</div>
 		</div>
 	)

@@ -55,7 +55,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=xTlNMmZKwpA",
-		"genres": ["ALL", "POP", "R&B"],
+		"genres": ["ALL", "POP", "R&amp;B"],
 		"youtube": true,
 		"start": 56,
 		"end": 85, //94
@@ -125,7 +125,7 @@ class Eighteen extends Component {
 			inViewport: false,
 			width: 0,
 			height: 0,
-			genres: ["ALL", "ROCK", "R&B", "POP", "INDIE", "RAP"],
+			genres: ["ALL", "ROCK", "R&amp;B", "POP", "INDIE", "RAP"],
 			selectedGenres: ["ALL"],
 		}
 	}
@@ -191,6 +191,8 @@ class Eighteen extends Component {
 	selectGenre = (e) => {
 		const element = e.target.innerHTML;
 		const list = this.state.selectedGenres;
+		console.log(element, 'element')
+
 		if (element === "ALL") { // if all is selected, clear state and replace with "ALL"
 			this.setState({ selectedGenres: ["ALL"] });
 		} else if (list.length === 1 && list.includes(element) ) {
@@ -199,8 +201,9 @@ class Eighteen extends Component {
 			this.setState({ selectedGenres: [...this.state.selectedGenres, element] });
 		} else if (list.includes("ALL")) { // if adding an element, remove "ALL" from list
 			const allIndex = list.indexOf("ALL");
+			const newList = list.splice(allIndex, 1, element);
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.splice(allIndex, 1, element) }));
-		} else { // if element 
+		} else { // pop out when clicked a second time
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));
 		}
 	}
@@ -218,6 +221,7 @@ class Eighteen extends Component {
 	}
 
 	render() {
+
 		const data = this.state.songData.songData2018;
 		const listSoundStatus = (this.state.soundOn === null) ? "List-container hidden" : "List-container";
 		const locked = (this.state.soundOn === null) ? "fix-position" : "";
@@ -229,7 +233,7 @@ class Eighteen extends Component {
 		const selectedGenres = this.state.selectedGenres;
 		const currentSongObj = data.filter(song => song._id === this.state.songId);
 		const times = [this.state.startTime, this.state.endTime];
-		
+		console.log('selectedGenres', selectedGenres)
 		return (
 			<div className="App-2018">																								
 				<Nav 
