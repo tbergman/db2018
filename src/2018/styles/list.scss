@@ -1,4 +1,17 @@
 // ====================
+// list container
+// ====================
+.List-container {
+	display: flex;
+	.col-left {
+		flex-grow: 2;
+	}
+	.col-right {
+		flex-grow: 1;
+	}
+}
+
+// ====================
 // song card
 // ====================
 .Song-card-18 {
@@ -6,8 +19,8 @@
 	
 }
 .card {
-  max-width: 450px;
-  min-height: 100vh;
+  max-width: 400px;
+  //min-height: 100vh;
   margin: 1.5em auto; //put left margin on that changes with media breakpoints
   letter-spacing: 1px;
   hr {
@@ -37,7 +50,7 @@
 	  text-align: justify;  
 	  margin-top: 1em;
 	  line-height: 1.2em;
-	  font-size: 1.1em;
+	  font-size: 1em;
 	}
 	img {
 	/*   max-width: 450px; */

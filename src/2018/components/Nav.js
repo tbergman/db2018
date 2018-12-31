@@ -19,11 +19,13 @@ function Nav(props) {
 				<div className="">
 					<ul className="genre-list">
 						{genres.map((genre, i) => {
-							if (selectedGenres.includes(genre)) {
+						  if (selectedGenres.includes(genre) && genre != "ALL") {
 								selected = 'selected'
+							} else if (genre === "ALL") {
+								selected = 'all'
 							} else {
 								selected = ''
-							}
+							} 
 							return (
 								<li key={i} className={selected} onClick={props.selectGenre}>{genre}</li>
 							)
