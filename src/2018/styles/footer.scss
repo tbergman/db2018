@@ -4,7 +4,11 @@
 	font-size: 0.8rem;
 	opacity: 1;
 	.footer-links-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 	}
 	.footer-links-item {
@@ -16,33 +20,16 @@
 	}
 	a.footer-link {
 		color: white;
+		&:hover {
+			text-decoration: none;
+			color: $blue;
+		}
 	}
-}
-
-// ===========
-// footer 2017 styles
-// ===========
-.footer {
-  // margin-left: 27%;
-  // text-align: center;
-} 
-
-.footer-links-item {
-  //margin: 2rem;
 }
 
 .bottom-span {
   padding-bottom: 2rem; 
   text-align: center;
-  background-color: #000000;
+  background-color: black;
 }
 
-.footer-link-div {
- // margin-bottom: 0.7rem;
-}
-
-a.footer-link:hover {
-  //text-decoration: underline;
-  //text-underline-position: under;
-  //color: $light-grey;
-}

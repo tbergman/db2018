@@ -104,11 +104,6 @@ const menuObj = {
 	]
 }
 
-// const GENRE_FILTERS = {
-// 	"ROCK": song => song.ROCK,
-// 	"INDIE": song => song.ROCK,
-// }
-
 class Eighteen extends Component {
 	constructor(props) {
 		super(props);
@@ -117,7 +112,7 @@ class Eighteen extends Component {
 		this.state = {
 			songData: {songData2018},
 			soundOn: null, 
-			songId: 50, //songUrl?
+			songId: 50,
 			songUrl: '',
 			playing: false,
 			startTime: 0,
@@ -142,8 +137,8 @@ class Eighteen extends Component {
 	updateWindowDimensions = () => {
 	  this.setState({ width: window.innerWidth, height: window.innerHeight });
 	}
-	// set & update user sound preferences
-	initialSoundSelection = (val) => {
+	
+	initialSoundSelection = (val) => { // set & update user sound preferences
 		this.handlePlaying();
 		this.setState( 
 			{ soundOn: val },
@@ -158,10 +153,6 @@ class Eighteen extends Component {
 			soundOn: !val,
 		})
 	}
-
-	// scrollToMyRef = () => {   // run this method to execute scrolling. 
- //    	console.log("scrollToMyRef")
- //  }
 
 	_onChange = (isVisible, param) => {
     if (isVisible) {
@@ -191,8 +182,6 @@ class Eighteen extends Component {
 	selectGenre = (e) => {
 		const element = e.target.innerHTML;
 		const list = this.state.selectedGenres;
-		console.log(element, 'element')
-
 		if (element === "ALL") { // if all is selected, clear state and replace with "ALL"
 			this.setState({ selectedGenres: ["ALL"] });
 		} else if (list.length === 1 && list.includes(element) ) {
@@ -208,32 +197,24 @@ class Eighteen extends Component {
 		}
 	}
 
-	// updateSongVisibility = (visibility) => {
-	// 	this.setState({ hideSong: visibility })
-	// }
-
 	handlePlaying = () => {
-		// if (this.state.soundOn) {
-			this.setState({
-				playing: true
-			})
-		// }
+		this.setState({
+			playing: true
+		})
 	}
 
 	render() {
-
 		const data = this.state.songData.songData2018;
 		const listSoundStatus = (this.state.soundOn === null) ? "List-container hidden" : "List-container";
 		const locked = (this.state.soundOn === null) ? "fix-position" : "";
 		const width = this.state.width;
 		const isVisible = this.state.inViewport;
 		const soundStatus = (this.state.soundOn === null) ? "hidden" : " ";
-
 		const soundChoice = this.state.soundOn
 		const selectedGenres = this.state.selectedGenres;
 		const currentSongObj = data.filter(song => song._id === this.state.songId);
 		const times = [this.state.startTime, this.state.endTime];
-		console.log('selectedGenres', selectedGenres)
+
 		return (
 			<div className="App-2018">																								
 				<Nav 
@@ -266,7 +247,6 @@ class Eighteen extends Component {
            <div className="col-right"></div>
 				</div>
 
-
 				<section className={listSoundStatus} > 
 					<div className="col col-left">
 						{data.map((song) => {
@@ -288,6 +268,7 @@ class Eighteen extends Component {
 							)
 						})}
 					</div>
+
 					<div className="col col-right">
 						<Player 
 							songId={this.state.songId} 
@@ -307,56 +288,4 @@ class Eighteen extends Component {
 	}
 }
 
-
-
 export default Eighteen;
-
-/* 
-
-<div className="card">
-										  <hr />
-										  <div className="title-row">
-										    <h1>{song._id}</h1>
-										    <div className="title-text">
-										      <h4>{song.artist}</h4>
-										      <h2>{song.title}</h2>
-										    </div>
-										  </div>
-										  
-										  <p className="description">{song.description}</p>
-										  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
-										  
-										</div>
-
-
-
-
-
-
-//////////
-<SongCardTest 
-									
-									song={song} 
-									key={song._id} 
-									songIsSelected={songIsSelected} /> 
-
-
-
-
-
-const options = {
-	threshold: 0.469,
-}
-const SongCardBlock = handleViewport(SongCard, options, config: {} );
-
-<SongCardBlock 
-								onVisibilityChange={this.onVisibilityChange}
-								isInViewport={this.state.inViewport}
-								song={song} 
-								width={width}
-								id={song._id} 
-								key={song._id} 
-								playing={this.state.playing}
-								muted={muted} 
-								songIsSelected={songIsSelected} /> 
-*/

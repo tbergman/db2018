@@ -40,8 +40,12 @@ html, body {
 	margin: 55px auto;
 	top: 0;
 	@media only screen and (max-width: 768px)  {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+        justify-content: center;
 		left:0;
 		right: 0;
 		height: auto;
