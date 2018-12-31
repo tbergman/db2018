@@ -12,8 +12,8 @@ function Hero(props) {
 				<h1>Best Songs of 2018</h1>
 				<p>Choose your sound preferences to continue:</p>
 				<div className="sound-selection-container">
-					<div className="sound-selection on" onClick={(e) => props.soundSelection(true, e)}>Turn it up</div>
-					<div className="sound-selection off" onClick={(e) => props.soundSelection(false, e)}>Mute pls</div></div>
+					<div className="sound-selection on" onClick={(e) => props.soundSelection(true, e)}>Let's hear it!</div>
+					<div className="sound-selection off" onClick={(e) => props.soundSelection(false, e)}>Mute for now</div></div>
 			</div>
 		</div>
 	)

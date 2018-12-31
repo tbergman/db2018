@@ -4,9 +4,11 @@ import ReactPlayer from 'react-player'
 const Player = (props) => {
 	const isVisible = props.isVisible;
   const viewportWidth = `${props.width * 0.92}px`;
-  const playerThird = `${props.width * 0.4}px`;
+  const playerThird = `${props.width * 0.25}px`;
+
   const playerWidth = (props.width <= 768) ? viewportWidth : playerThird;
-  const playerHeight = (playerWidth === viewportWidth ? `${props.width * 0.45}px`: `${props.width * 0.25}px`)
+  const playerHeight = (playerWidth === viewportWidth ? `${props.width * 0.45}px`: `${props.width * 0.15}px`)
+
   const checkMobile = (props.width <= 768) ? 'mobile' : ''; 
   const mobilePlayer = (checkMobile === 'mobile' && props.muted) ? 'Player hidden' : 'Player';
   const hideUntilVisible = (isVisible) ? '' : 'hidden';

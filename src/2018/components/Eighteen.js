@@ -1,87 +1,13 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Hero from './Hero';
+import Intro from './Intro';
 import SongCard from './SongCard';
 import Footer from './Footer';
 import Player from './Player';
 import VisibilitySensor from 'react-visibility-sensor';
 
-//import songDataJSON from '../data/songData.json';
-
-const songData2018 = [
-	{
-		"artist": "Dirty Projectors",
-		"title": "That's A Lifestyle",
-		"_id": 50,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=bKJBSjadBRw",
-		"genres": ["ALL", "INDIE", "ROCK"],
-		"youtube": true,
-		"start": 32,
-		"end": 71,
-	},
-	{
-		"artist": "Janelle Monáe",
-		"title": "Django Jane",
-		"_id": 41,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=mTjQq5rMlEY",
-		"genres": ["ALL", "POP", "R&amp;B"],
-		"youtube": true,
-		"start": 76,
-		"end": 119,
-	},
-	{
-		"artist": "Tomberlin",
-		"title": "Any Other Way",
-		"_id": 40,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=vquVuj0DWZk",
-		"genres": ["ALL", "INDIE"],
-		"youtube": true,
-		"start": 93,
-		"end": 131,
-	},
-	{
-		"artist": "Cardi B ft. Bad Bunny & J Balvin",
-		"title": "I Like It",
-		"_id": 39,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=xTlNMmZKwpA",
-		"genres": ["ALL", "POP", "R&amp;B"],
-		"youtube": true,
-		"start": 56,
-		"end": 85, //94
-	},
-	{
-		"artist": "No Age",
-		"title": "Send Me",
-		"_id": 38,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=B7WiAVLqJOc",
-		"genres": ["ALL", "INDIE"],
-		"youtube": true,
-		"start": 151,
-		"end": 194,
-	},
-	{
-		"artist": "Snail Mail",
-		"title": "Pristine",
-		"_id": 37,
-		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
-		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
-		"videoUrl": "https://www.youtube.com/watch?v=s7tnTucP1UM",
-		"genres": ["ALL", "ROCK"],
-		"youtube": true,
-		"start": 60,
-		"end": 96,
-	},
-]
+import songData2018 from '../data/songData2018.json';
 
 const menuObj = { //disabling for now until the full site is integrated
 	"title": "Menu",
@@ -230,19 +156,9 @@ class Eighteen extends Component {
 
 				<div className={listSoundStatus}>
 					<div className="Intro-18 col-left">
-						<div className="card">
-							<p><span className="first-line">2017 was a dark year in many respects</span>
-								, but music allows us to feel the gamut of emotions, 
-			          regardless of what’s going on around us. A song can mirror and solidify what you’re feeling, 
-			          or can change your mood altogether. A song can also inspire, surprise, or disappoint, 
-			          depending on its context. Music subverted expectations in 2017 -- rap was dominated by 
-			          flute samples, Calvin Harris made funk songs, Courtney Barnett and Kurt Vile teamed up for 
-			          a whole album, Lorde and Kendrick Lamar got even better, and Harry Styles sounded like David 
-			          Bowie.
-		           </p>
-		           </div>
-           	</div>
-           <div className="col-right"></div>
+					<Intro />	
+          </div>
+          <div className="col-right"></div>
 				</div>
 
 				<section className={listSoundStatus} > 
@@ -250,10 +166,9 @@ class Eighteen extends Component {
 						{data.map((song) => {
 						const songGenres = song.genres;
 						const songId = song._id;
-						//console.log(songId, 'songId from card')
 						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 						return (
-							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50}>
+							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} minTopValue={20}>
 								{({ isVisible }) => {
 									return (
 										<SongCard 

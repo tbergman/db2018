@@ -6,6 +6,9 @@ function SongCard(props) {
 	const _JSONdesc = props.song.description;
   const _parsedDesc = ReactHtmlParser(_JSONdesc);
 
+  const _JSONListen = props.song.listen;
+  const _parsedListen = ReactHtmlParser(_JSONListen);
+
 	return (
 
 		<div className={songVisibility} id={props.song._id} >
@@ -20,8 +23,9 @@ function SongCard(props) {
 				    </div>
 				  </div>
 				  
-				  <p className="description">{_parsedDesc}</p>
-				  <img src="https://lovinlife.com/wp-content/uploads/2018/09/Dog.jpg" alt="dog" />
+				  <div className="description">{_parsedDesc}</div>
+				  <img src={props.song.imgURL} alt={props.song.artist} />
+				  <div className="listen">{_parsedListen}</div>
 				  
 				</div>
 		</div>
