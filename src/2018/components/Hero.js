@@ -5,7 +5,6 @@ import heroOverlay from '../images/sound-4.gif';
 function Hero(props) {
 	return (
 		<div className="Hero-18">
-
 		<img className="hero-img" alt="title" src={heroImage} />
 		<img className="overlay" alt="static gif" src={heroOverlay} />
 			<div className="content-wrapper">

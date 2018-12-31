@@ -6,12 +6,7 @@ const Player = (props) => {
   const viewportWidth = `${props.width * 0.92}px`;
   const playerThird = `${props.width * 0.4}px`;
   const playerWidth = (props.width <= 768) ? viewportWidth : playerThird;
-  // const calcHeight = `${props.width * 0.5}px`;
   const playerHeight = (playerWidth === viewportWidth ? `${props.width * 0.45}px`: `${props.width * 0.25}px`)
-  
-
-  //const hideVideo = (isVisible && props.width > 640) ? 'Player' : 'Player hidden';
-  // const hideVideo = (isVisible && props.width > 768) ? 'Player' : 'Player hidden';
   const checkMobile = (props.width <= 768) ? 'mobile' : ''; 
   const mobilePlayer = (checkMobile === 'mobile' && props.muted) ? 'Player hidden' : 'Player';
   const hideUntilVisible = (isVisible) ? '' : 'hidden';
@@ -39,5 +34,3 @@ const Player = (props) => {
 }
 
 export default Player;
-
-//playing={props.playing}

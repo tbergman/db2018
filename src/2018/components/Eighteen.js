@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Hero from './Hero';
-// import SongCard from './SongCard';
 import SongCard from './SongCard';
 import Footer from './Footer';
-// import handleViewport from 'react-in-viewport';
 import Player from './Player';
 import VisibilitySensor from 'react-visibility-sensor';
 
 //import songDataJSON from '../data/songData.json';
-//const videoUrl = 'https://www.youtube.com/embed/pa_4jV0qRTg'//watch?v=pYRgeHRtKvU&feature=youtu.be
-// const videoUrl = 'https://soundcloud.com/iceage-official/hurrah'
+
 const songData2018 = [
 	{
 		"artist": "Dirty Projectors",
@@ -86,7 +83,7 @@ const songData2018 = [
 	},
 ]
 
-const menuObj = {
+const menuObj = { //disabling for now until the full site is integrated
 	"title": "Menu",
 	"links": [
 		{
@@ -190,7 +187,6 @@ class Eighteen extends Component {
 			this.setState({ selectedGenres: [...this.state.selectedGenres, element] });
 		} else if (list.includes("ALL")) { // if adding an element, remove "ALL" from list
 			const allIndex = list.indexOf("ALL");
-			const newList = list.splice(allIndex, 1, element);
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.splice(allIndex, 1, element) }));
 		} else { // pop out when clicked a second time
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));

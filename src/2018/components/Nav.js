@@ -6,16 +6,11 @@ import soundOff from '../images/off.svg';
 
 function Nav(props) {
 	const genres = props.genres;
-
-	// const mobile = (props.width < 640) ? '' : 'hidden';
-	// const desktop = (props.width > 640) ? '' : 'hidden';
 	const soundIcon = (props.soundChoice) ? soundOn : soundOff ; 
 	const selectedGenres = props.selectedGenres;
 	const soundVisibility = (props.visibility === "hidden") ? "sound-icon hidden" : "sound-icon" ;
-	//console.log(props.visibility, "props.visibility Nav")
 	let selected; 
 
-	//const genreVisibility = `${props.visibility} genre-list`
 	return (
 		<div className="Nav-18">
 			<div className="Nav-18-left">
@@ -30,7 +25,6 @@ function Nav(props) {
 						<div className="genre-list-title">Genres</div>
 						<ul className="genre-list">
 							{genres.map((genre, i) => {
-								console.log(genre, "genre")
 							  if (selectedGenres.includes(genre) && genre !== "ALL") {
 									selected = 'selected'
 								} else if (genre === "ALL") {
