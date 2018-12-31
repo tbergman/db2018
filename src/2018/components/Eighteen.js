@@ -20,7 +20,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=bKJBSjadBRw",
-		"genres": ["INDIE", "ROCK"],
+		"genres": ["ALL", "INDIE", "ROCK"],
 		"youtube": true,
 		"start": 32,
 		"end": 71,
@@ -33,7 +33,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=mTjQq5rMlEY",
-		"genres": ["POP", "R&amp;B"],
+		"genres": ["ALL", "POP", "R&amp;B"],
 		"youtube": true,
 		"start": 76,
 		"end": 119,
@@ -46,7 +46,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=vquVuj0DWZk",
-		"genres": ["INDIE"],
+		"genres": ["ALL", "INDIE"],
 		"youtube": true,
 		"start": 93,
 		"end": 131,
@@ -59,7 +59,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=xTlNMmZKwpA",
-		"genres": ["POP", "R&B"],
+		"genres": ["ALL", "POP", "R&B"],
 		"youtube": true,
 		"start": 56,
 		"end": 85, //94
@@ -72,7 +72,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=B7WiAVLqJOc",
-		"genres": ["INDIE"],
+		"genres": ["ALL", "INDIE"],
 		"youtube": true,
 		"start": 151,
 		"end": 194,
@@ -85,7 +85,7 @@ const songData2018 = [
 		"description": "Spoon, the most consistently good band currently working, and one of my 10 favorite bands of all time, dropped another gem this year. 'Hot Thoughts' is a swaggering, sinewy jam, perfect for a future James Bond theme song. The sudden bursts of guitar interweave with the jangling bells, swooping strings, and moving bass line to make a nice groove to complement Britt Daniel's passionate yelps.",
 		"imgURL": "http://res.cloudinary.com/ddvn6aemk/image/upload/c_fill,g_north,h_700,w_1300/v1513194248/dbrad2017/large/best_songs_2017_spoon.jpg",
 		"videoUrl": "https://www.youtube.com/watch?v=s7tnTucP1UM",
-		"genres": ["ROCK"],
+		"genres": ["ALL", "ROCK"],
 		"youtube": true,
 		"start": 60,
 		"end": 96,
@@ -129,7 +129,7 @@ class Eighteen extends Component {
 			width: 0,
 			height: 0,
 			genres: ["ALL", "ROCK", "R&B", "POP", "INDIE", "RAP"],
-			selectedGenres: [],
+			selectedGenres: ["ALL"],
 		}
 	}
 
@@ -156,13 +156,14 @@ class Eighteen extends Component {
 		})
 	}
 
-	onVisibilityChange = (id) => {
-		this.setState({ songId: id });
-	}
+	// onVisibilityChange = (id) => {
+	// 	console.log(id, "onVisibilityChange")
+	// 	this.setState({ songId: id });
+	// }
 
 
 	_onChange = (isVisible, param) => {
-    // console.log(isVisible, param)
+    console.log(isVisible, param, "_onChange")
     this.setVideoUrl(param)
     this.isInViewport(isVisible)
     this.setState({ songId: param})
@@ -175,15 +176,18 @@ class Eighteen extends Component {
 	}
 
 	isInViewport = (visibility) => {
+		console.log(visibility, "isInViewport")
 		this.setState({ inViewport: visibility })
 	 }
 
 	selectGenre = (e) => {
 		const element = e.target.innerHTML;
 		const list = this.state.selectedGenres;
-		if (element === "ALL") {
-			this.setState({ selectedGenres: [] });
-		} else if (!list.includes(element)) {
+		// if (element === "ALL") {
+		// 	this.setState({ selectedGenres: [] });
+		// } else 
+
+		if (!list.includes(element)) {
 			this.setState({ selectedGenres: [...this.state.selectedGenres, element] });
 		} else {
 			this.setState(prevState => ({ selectedGenres: prevState.selectedGenres.filter(genre => genre !== element) }));
@@ -205,7 +209,7 @@ class Eighteen extends Component {
 
 	render() {
 		const data = this.state.songData.songData2018;
-		const soundStatus = (this.state.soundOn === null) ? "hidden" : "";
+		const soundStatus = (this.state.soundOn === null) ? "List-container hidden" : "List-container";
 		const width = this.state.width;
 		const isVisible = this.state.inViewport;
 
@@ -220,39 +224,42 @@ class Eighteen extends Component {
 				<Nav genres={this.state.genres} menu={menuObj} width={width} selectGenre={(e) => this.selectGenre(e)} selectedGenres={selectedGenres} />
 				<Hero soundSelection={this.soundSelection}  />
 				<section className={soundStatus}>
+					
+					<div className="col col-right">
+						{data.map((song) => {
+						const songGenres = song.genres;
+						const songId = song._id;
+						const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
 
-				<Player 
-					songId={this.state.songId} 
-					currentSong={currentSongObj}
-					songData={data} 
-					videoUrl={this.state.songUrl} 
-					isVisible={isVisible} 
-					volume={0.5} 
-					width={width} 
-					muted={!soundChoice} />
-
-				{data.map((song) => {
-					const songGenres = song.genres;
-					const songId = song._id;
-					const songIsSelected = (selectedGenres.some(v => songGenres.indexOf(v) !== -1))
-
-					return (
-						<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50}>
-							{({ isVisible }) => {
-								//console.log(isVisible, song._id, "isVisible map")
-								return (
-									
-								<SongCardTest 
-									song={song} 
-									key={song._id} 
-									songIsSelected={songIsSelected} /> 
+						return (
+							<VisibilitySensor key={song._id} onChange={isVisible => this._onChange(isVisible, songId)} scrollDelay={50} offset={{top:0}} >
+								{({ isVisible }) => {
+									//console.log(isVisible, song._id, "isVisible map")
+									return (
+										
+									<SongCardTest 
+										song={song} 
+										key={song._id} 
+										songIsSelected={songIsSelected} /> 
 
 
-								)
-							}}
-						</VisibilitySensor>
-					)
-				})}
+									)
+								}}
+							</VisibilitySensor>
+							)
+						})}
+					</div>
+					<div className="col col-left">
+						<Player 
+							songId={this.state.songId} 
+							currentSong={currentSongObj}
+							songData={data} 
+							videoUrl={this.state.songUrl} 
+							isVisible={isVisible} 
+							volume={0.5} 
+							width={width} 
+							muted={!soundChoice} />
+					</div>
 				</section>
 				<Footer visibility={soundStatus} />
 			</div>

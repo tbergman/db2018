@@ -20,13 +20,11 @@ const SongCard = (props: { inViewport: boolean }) => {
 	
 	// const songVisibility = props.songIsSelected ? "Song-card-18" : "Song-card-18 hidden"
 	const isVisible = props.isVisible;
-	console.log(isVisible, "isVisible")
+	//console.log(isVisible, "isVisible")
 	
 	return (
-		<div id={props.song._id} ref={innerRef}>
-			<div className={hideVideo}>
-				
-			</div>
+		<div id={props.song._id}>
+			
 			<div className="card">
 			  <hr className={text}/>
 			  <div className="title-row">

@@ -43,6 +43,11 @@
 					content: "\00d7 ";
 				}
 			}
+			li.all {
+				border: none;
+				text-transform: lowercase;
+				&:before {content: "clear ";}
+			}
 		}
 	}
 	

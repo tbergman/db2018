@@ -3,6 +3,7 @@ import React from 'react';
 function SongCardTest(props) {
 	const songVisibility = props.songIsSelected ? "Song-card-18" : "Song-card-18 hidden";
 	// console.log(songVisibility, "songVisibility")
+	//console.log('song Id, song start, end', props.song._id, props.song.start, props.song.end)
 	return (
 
 		<div className={songVisibility} id={props.song._id}>
