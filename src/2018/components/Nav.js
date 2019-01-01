@@ -22,7 +22,7 @@ function Nav(props) {
 			<div className="Nav-18-right">
 				<div className={props.visibility}>
 					<div className="genre-list-container">
-						<div className="genre-list-title">Genres</div>
+						<div className="genre-list-title" onClick="void(0)">Genres</div>
 						<ul className="genre-list">
 							{genres.map((genre, i) => {
 							  if (selectedGenres.includes(genre) && genre !== "ALL") {

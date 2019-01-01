@@ -10,6 +10,9 @@ function SongCard(props) {
   const _JSONListen = props.song.listen;
   const _parsedListen = ReactHtmlParser(_JSONListen);
 
+  const _JSONArtist = props.song.artist;
+  const _parsedArtist = ReactHtmlParser(_JSONArtist);
+
 	return (
 
 		<div className={songVisibility} id={props.song._id} >
@@ -22,7 +25,7 @@ function SongCard(props) {
 						  <div className="title-row">
 						    <h1>{props.song._id}</h1>
 						    <div className="title-text">
-						      <h4>{props.song.artist}</h4>
+						      <h4>{_parsedArtist}</h4>
 						      <h2>"{props.song.title}"</h2>
 						    </div>
 						  </div>
