@@ -26,7 +26,7 @@ function SongCard(props) {
 						    <h1>{props.song._id}</h1>
 						    <div className="title-text">
 						      <h4>{_parsedArtist}</h4>
-						      <h2>"{props.song.title}"</h2>
+						      <h2><span className="quotations">“</span>{props.song.title}<span className="quotations">”</span></h2>
 						    </div>
 						  </div>
 						 );

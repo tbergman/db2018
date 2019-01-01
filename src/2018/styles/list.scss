@@ -96,6 +96,9 @@
 			  font-weight: 100;
 			  font-size: 2em;
 			}
+			.quotations {
+				font-family: 'Coustard', serif;
+			}
 		}
 	}
 	.description {
@@ -104,6 +107,9 @@
 	  margin-top: 2em;
 	  line-height: 1.2em;
 	  font-size: 1em;
+	  p {
+	  	margin: 1em 0;
+	  }
 	}
 
 	img {
