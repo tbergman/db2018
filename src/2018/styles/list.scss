@@ -41,6 +41,25 @@
 	  p {
 	  	margin-bottom: 1em;
 	  }
+	  .playlist-group {
+	  	margin-top: 2em;
+	    background-color: #eaeaea;
+	    padding: 1em;
+	  	h5 {
+	  		a {
+	  			font-family: 'Merriweather', serif;
+	  			font-weight: 400;
+    			font-size: 1em;
+    			text-decoration: none;
+    			&:hover {
+    				color: $blue;
+    			}
+    			&:before {
+    				content: "\2192 "; 
+    			}
+	  		}
+	  	}
+	  }
 }
 
 // ====================

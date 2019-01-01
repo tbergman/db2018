@@ -6,7 +6,12 @@
 
 html, body {
 	background-color: #ffffff;
-	
+	::selection {
+	  background: $orange; /* WebKit/Blink Browsers */
+	}
+	::-moz-selection {
+	  background: $orange; /* Gecko Browsers */
+	}
 }
 
 .App-2018 {
@@ -37,7 +42,7 @@ html, body {
 
 #videoInView {
 	position: fixed;
-	height: 450px;
+	height: 500px;
 	width: 100vw;
 	background-color: black;
 	opacity: 0;

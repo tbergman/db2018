@@ -24,6 +24,13 @@ function Intro() {
 					<li>Mac Miller, <a href="https://www.youtube.com/watch?v=qI-t1I_ppL8" target="_blank" rel="noopener noreferrer">"What's the Use?"</a></li>
 					<li>Jhen&eacute; Aiko ft. Rae Sremmurd, <a href="https://www.youtube.com/watch?v=5x-d3pabd5o" target="_blank" rel="noopener noreferrer">"Sativa"</a></li>
 			</ul>
+			<div className="playlist-group">
+				<p>Here are playlist links if you choose to stream these songs that way. The "Spotify Clean Playlist" has all the explicit songs removed, in case you want to shuffle it with young and/or sensitive ears around.</p>
+
+				<h5><a href="https://open.spotify.com/user/dbradford07/playlist/3TypZOoIyytlMC6mxu9757?si=WP7T7KoWSj6EqU0li9Zl1g" target="_blank" rel="noopener noreferrer">Spotify Playlist</a></h5>
+				<h5><a href="https://open.spotify.com/user/dbradford07/playlist/1sf5OC9Gi6mtBZJ9040u3u?si=RYF2gW9ES5y6OBcUFzF1hA" target="_blank" rel="noopener noreferrer">Spotify Clean Playlist</a></h5>
+				<h5><a href="https://www.youtube.com/watch?v=NC7cmWkBoz4&list=PLqpBLIvY2a6eQCdrHkY1vLHWngiu8O_dV" target="_blank" rel="noopener noreferrer">YouTube Playlist</a></h5>
+			</div>
 		</div>
 	)
 }

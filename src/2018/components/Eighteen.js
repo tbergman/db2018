@@ -5,7 +5,6 @@ import Intro from './Intro';
 import SongCard from './SongCard';
 import Footer from './Footer';
 import Player from './Player';
-import VisibilitySensor from 'react-visibility-sensor';
 
 import songData2018 from '../data/songData2018.json';
 
