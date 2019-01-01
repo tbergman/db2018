@@ -30,6 +30,10 @@ html, body {
 		font-family: "Open Sans", sans-serif;
 	}
 
+	a:hover {
+		color: $blue;
+	}
+
 	@media only screen and (max-width: 768px) {
 		h1 { font-weight: 600; font-size: 3.5em; }
 		h2 { font-weight: 500; font-size: 3.25em; }
@@ -47,6 +51,7 @@ html, body {
 	background-color: black;
 	opacity: 0;
 	top: -25%;
+	z-index: -1;
 }
 
 .Player {

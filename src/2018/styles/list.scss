@@ -72,6 +72,7 @@
   max-width: 500px;
   margin: 1.5em auto; //put left margin on that changes with media breakpoints
   letter-spacing: 1px;
+  z-index: 9;
   hr {
 	  border: 3px solid black;
 	  margin: 2em auto;
