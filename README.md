@@ -1,5 +1,5 @@
 ## Introduction
-An interactive, mobile responsive music list that introduces readers to some of the best songs from 2018. Content sourced from [dbradmusic] (https://dbradmusic.com). 
+An interactive, mobile responsive music list that introduces readers to some of the best songs from 2018. Content sourced from [dbradmusic](https://dbradmusic.com). 
 
 ### View the site at (http://dbradbestsongs.com)
 
